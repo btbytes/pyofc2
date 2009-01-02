@@ -34,7 +34,8 @@ class OFCBase(dict):
     replace = {
         'font_size':'font-size', 'fontsize': 'font-size',
         'color':'colour', 'bg_color':'bg_colour', 'bgcolor':'bg_colour',
-        'dot_size': 'dot-size', 'dotsize':'dot-size'
+        'dot_size': 'dot-size', 'dotsize':'dot-size', 'grid_colour': 'grid-colour',
+        'grid_color': 'grid-colour', 'tick_height': 'tick-height', 'on_click':'on-click',
     }
      
     def __setattr__(self, k, w):       
@@ -59,10 +60,14 @@ def ofc_factory(classname, acceptable):
        setattr(klass, '__init__', ofc_init )
        return klass
             
-title = ofc_factory('title', ['text','style'])  
+title = ofc_factory('title', ['text','style'])
 class x_legend(title): pass
 class y_legend(title): pass
 
+labels = ofc_factory('labels', ['labels'])
+x_axis_label = ofc_factory('x_axis_label', ['text', 'steps', 'vertical', 'color', 'colour', 'size', 'visible', 'rotate' ])
+x_axis_labels = ofc_factory('x_axis_labels', ['labels','steps', 'vertical', 'colour', 'color', 'size','rotate'])
+  
 axis =  ofc_factory('axis', ['stroke', 'tick_height', 'colour', 'grid_colour', 'steps', 'min', 'max', 'labels'])
 class x_axis(axis): pass
 class y_axis(axis): pass
@@ -71,7 +76,8 @@ class y_axis_right(axis): pass
 tooltip = ofc_factory('tooltip', ['shadow', 'stroke', 'colour', 'bg_colour', 'title_style', 'body_style'])
 
 element = ofc_factory('element', ['type','alpha', 'colour', 'color', 'text', 'fontsize', 'values'])
-linefactory = ofc_factory('_line', ['type','alpha', 'colour','color', 'text', 'fontsize', 'values', 'halo_size', 'width', 'dot_size'])
+linefactory = ofc_factory('_line', ['type','alpha', 'colour','color', 'text', 
+    'fontsize', 'values', 'halo_size', 'width', 'dot_size', 'on_click'])
 line = lambda **kw: linefactory(type='line',**kw)     
 line_dot = lambda **kw: linefactory(type='line_dot', **kw)
 line_hollow = lambda **kw: linefactory(type='line_hollow', **kw)
@@ -88,7 +94,6 @@ class open_flash_chart(dict):
     'y_axis': y_axis,
     'y_axis_right': y_axis_right,
     'tooltip' : tooltip,
-    
     }
 
     def __setattr__(self, k, w):

@@ -145,12 +145,66 @@ def test_manylines():
     chart.y_axis = y
     return chart      
 
+def test_x_axis_labels_1():
+    '''
+    X Axis Labels 1
+    
+    Simple X Axis Lables
+    '''
+    t = title(text='X Axis Labels')
+    l = line_dot()
+    l.values = range(9,0,-1)
+    
+    x = x_axis()
+    x.colour = '#428C3E'
+    x.grid_colour = '#86BF83'
+    lbl = labels(labels=['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'])
+    x.labels = lbl
+    chart = open_flash_chart()
+    chart.title = t
+    chart.add_element(l)
+    chart.x_axis = x
+    return chart
+
+def test_x_axis_labels_3():
+    '''
+	X Axis Labels 3
+	X Axis labels complex example
+	'''
+    t = title(text='X Axis Labels Complex Example')
+    l = line_dot()
+    l.values = range(9,0,-1)
+    
+    x = x_axis()
+    x.stroke = 1
+    x.colour = '#428C3E'
+    x.tick_height = 5
+    x.steps = 1
+    x.grid_colour = '#86BF83'
+    xlbls = x_axis_labels(steps=2, rotate='vertical', colour='#FF0000', size=16)
+
+    lbls = ['one', 'two', 'three', 'four', 'five']
+    lbls.append(x_axis_label(text='six', colour='#0000FF', size=30, rotate='vertical'))
+    lbls.append(x_axis_label(text='seven', colour='#0000FF', size=30, rotate='vertical'))
+    eight = x_axis_label(text='eight', colour='#8C773E', size=16, rotate='diagonal')
+    eight.visible = True
+    lbls.append(eight)
+    lbls.append(x_axis_label(text='nine', colour='#2683CF', size=16, rotate='horizontal'))
+    xlbls.labels = lbls
+    x.labels = xlbls
+    chart = open_flash_chart()
+    chart.title = t
+    chart.add_element(l)
+    chart.x_axis = x
+    return chart
+
 def _test():
     test_line()
     test_line_dot()
     test_line_hollow()
     test_manylines()
-
+    test_x_axis_labels_1()
+	
 ## The following functions are used to auto-generate demo files from this module.
 def listfunc():
     me = __import__(inspect.getmodulename(__file__))
