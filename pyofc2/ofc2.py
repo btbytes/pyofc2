@@ -63,7 +63,7 @@ title = ofc_factory('title', ['text','style'])
 class x_legend(title): pass
 class y_legend(title): pass
 
-axis =  ofc_factory('axis', ['stroke', 'tick_height', 'colour', 'grid_colour', 'steps', 'min', 'max'])
+axis =  ofc_factory('axis', ['stroke', 'tick_height', 'colour', 'grid_colour', 'steps', 'min', 'max', 'labels'])
 class x_axis(axis): pass
 class y_axis(axis): pass
 class y_axis_right(axis): pass
