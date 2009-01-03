@@ -1,0 +1,1 @@
+{"x_axis": {"colour": "#428C3E", "labels": {"labels": ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]}, "grid-colour": "#86BF83"}, "elements": [{"values": [9, 8, 7, 6, 5, 4, 3, 2, 1], "type": "line_dot"}], "title": {"text": "X Axis Labels"}}
