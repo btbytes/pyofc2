@@ -13,10 +13,11 @@ import math
 import random
 import inspect
 from jinja import Environment, FileSystemLoader
+import markdown2 #http://code.google.com/p/python-markdown2/
 
 def test_line():      
     '''  
-    Line
+    Line/Line
     Simple Line Graph
     '''
     t = title(text=time.strftime('%a %Y %b %d'))
@@ -36,7 +37,7 @@ def frange(a,b,incr):
     
 def test_line_dot():
     '''
-    Line Dot
+    Line/Line Dot
     Examples of Dotted Line Chart
     '''
     t = title(text=time.strftime('%a %Y %b %d'))     
@@ -72,7 +73,7 @@ def test_line_dot():
 
 def test_line_hollow():
     '''
-    Line Hollow 
+    Line/Line Hollow 
     Examples of Hollow Line Charts  
     '''
     t = title(text=time.strftime('%a %Y %b %d'))     
@@ -107,7 +108,7 @@ def test_line_hollow():
 
 def test_manylines():
     '''
-    Many Lines    
+    Line/Many Lines    
     Examples of Multiple Line Charts
     '''       
     l1 = line_dot()
@@ -147,7 +148,7 @@ def test_manylines():
 
 def test_x_axis_labels_1():
     '''
-    X Axis Labels 1
+    X Axis Labels/X Axis Labels 1
     
     Simple X Axis Lables
     '''
@@ -168,7 +169,7 @@ def test_x_axis_labels_1():
 
 def test_x_axis_labels_3():
     '''
-	X Axis Labels 3
+	X Axis Labels/X Axis Labels 3
 	X Axis labels complex example
 	'''
     t = title(text='X Axis Labels Complex Example')
@@ -232,17 +233,21 @@ docs = [
     
 def build_examples():
     funcs = [f for f in listfunc() if f.__name__.startswith('test_')]
-    examples = [] 
+    examples = []
+    categories = []
     for f in funcs:
-        doc = ''.join([l.strip() for l in f.__doc__.split('\n')[2:]])
-        doc = doc.replace('\n\n', '<br/>')
-        doc = doc.replace('--', '</p><p>') 
-        doc = '<p>%s</p>' % (doc, )  
+        fdoc = f.__doc__.split('\n')
+        cat, title = fdoc[1].strip().split('/')
+        print  cat, categories
+        doc = markdown2.markdown('\n'.join([l.strip() for l in fdoc[2:]]))
         name = f.__name__.split('test_')[1]
         json = ''
         if f():
             json = f().render()
         code = inspect.getsource(f) 
+        cstart = code.find("'''")
+        cend = code.find("'''", cstart+3)+3
+        code = code[:cstart]+ code[cend:]
         
         try:
             from pygments import highlight
@@ -254,10 +259,13 @@ def build_examples():
             code = highlight(code, lexer, formatter)
         except:
             pass 
-        
+        if cat not in categories:
+            categories.append(cat)
+            
         example = {
             'name': name,
-            'title': f.__doc__.split('\n')[1].strip(),
+            'title': title,
+            'cat':cat,
             'doc': doc,
             'code': code,
             'datafile': 'data/%s.json' % (name, ),
@@ -266,13 +274,19 @@ def build_examples():
         examples.append(example)
         
     #generate data files & sidebar links
-    sidebar = '<ul>%s</ul>'
-    links = []
     for e in examples:
         outf = open(e['datafile'], 'w')
         outf.write(e['json'])
         outf.close()     
-        links.append('<li><a href="%s">%s</a></li>' %(e['name']+'.html', e['title']))      
+
+    sidebar = '<ul>%s</ul>'
+    links = []
+    for cat in categories:
+        links.append('<ul><h4>%s</h4>' % cat)
+        for e in examples: #inefficient.. much
+            if cat == e['cat']:
+                links.append('<li><a href="%s">%s</a></li>' %(e['name']+'.html', e['title']))      
+        links.append('</ul>')
     sidebar = sidebar % '\n'.join(links)
         
     #generate demo-html files
