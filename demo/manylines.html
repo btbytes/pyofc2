@@ -3,7 +3,7 @@
 <html>
 	<head>
 		<title>
-			Python Open Flash Chart (pyOFC2) &em;  Many Lines 
+			Python Open Flash Chart (pyOFC2) &mdash;  Many Lines 
 		</title>
 		<meta name="author" content="Pradeep Kishore Gowda">
 
@@ -36,62 +36,85 @@
 							
 	<h2>Many Lines</h2>
 	<div id="chart_manylines"></div>
-		<p>Examples of Multiple Line Charts</p>
-	<pre>def test_manylines():
-    '''
-    Many Lines    
-    Examples of Multiple Line Charts
-    '''       
-    l1 = line_dot()
-    l1.width = 4
-    l1.colour = "#DFC329"
-    l1.dot_size = 5
-    l1.values = [random.randint(1,6) for i in  range(9)]
-    l1.text = 'Line 1'
-    l1.font_size = 10
+	<div id="doc"><p>Example of Multiple Line Charts</p>
+</div>
+	<pre><div class="syntax"><pre><span class="k">def</span> <span class="nf">test_manylines</span><span class="p">():</span>
+           
+    <span class="n">l1</span> <span class="o">=</span> <span class="n">line_dot</span><span class="p">()</span>
+    <span class="n">l1</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="mf">4</span>
+    <span class="n">l1</span><span class="o">.</span><span class="n">colour</span> <span class="o">=</span> <span class="s">&quot;#DFC329&quot;</span>
+    <span class="n">l1</span><span class="o">.</span><span class="n">dot_size</span> <span class="o">=</span> <span class="mf">5</span>
+    <span class="n">l1</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span><span class="mf">6</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span>  <span class="nb">range</span><span class="p">(</span><span class="mf">9</span><span class="p">)]</span>
+    <span class="n">l1</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s">&#39;Line 1&#39;</span>
+    <span class="n">l1</span><span class="o">.</span><span class="n">font_size</span> <span class="o">=</span> <span class="mf">10</span>
     
-    l2 = line_hollow()
-    l2.width = 1
-    l2.colour = "#6363ac"
-    l2.dot_size = 5
-    l2.values = [random.randint(7,13) for i in  range(9)]  
-    l2.text = 'Line 2'
-    l2.font_size = 10
+    <span class="n">l2</span> <span class="o">=</span> <span class="n">line_hollow</span><span class="p">()</span>
+    <span class="n">l2</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="mf">1</span>
+    <span class="n">l2</span><span class="o">.</span><span class="n">colour</span> <span class="o">=</span> <span class="s">&quot;#6363ac&quot;</span>
+    <span class="n">l2</span><span class="o">.</span><span class="n">dot_size</span> <span class="o">=</span> <span class="mf">5</span>
+    <span class="n">l2</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mf">7</span><span class="p">,</span><span class="mf">13</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span>  <span class="nb">range</span><span class="p">(</span><span class="mf">9</span><span class="p">)]</span>  
+    <span class="n">l2</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s">&#39;Line 2&#39;</span>
+    <span class="n">l2</span><span class="o">.</span><span class="n">font_size</span> <span class="o">=</span> <span class="mf">10</span>
     
-    l3 = line()
-    l3.width = 4;
-    l3.colour = "#5E4725"
-    l3.values = [random.randint(14,19) for i in  range(9)]  
-    l3.text = 'Line 3'
-    l3.font_size = 10
+    <span class="n">l3</span> <span class="o">=</span> <span class="n">line</span><span class="p">()</span>
+    <span class="n">l3</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="mf">4</span><span class="p">;</span>
+    <span class="n">l3</span><span class="o">.</span><span class="n">colour</span> <span class="o">=</span> <span class="s">&quot;#5E4725&quot;</span>
+    <span class="n">l3</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mf">14</span><span class="p">,</span><span class="mf">19</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span>  <span class="nb">range</span><span class="p">(</span><span class="mf">9</span><span class="p">)]</span>  
+    <span class="n">l3</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s">&#39;Line 3&#39;</span>
+    <span class="n">l3</span><span class="o">.</span><span class="n">font_size</span> <span class="o">=</span> <span class="mf">10</span>
     
-    y = y_axis()
-    y.min, y.max, y.steps = 0, 20, 5
+    <span class="n">y</span> <span class="o">=</span> <span class="n">y_axis</span><span class="p">()</span>
+    <span class="n">y</span><span class="o">.</span><span class="n">min</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">max</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">steps</span> <span class="o">=</span> <span class="mf">0</span><span class="p">,</span> <span class="mf">20</span><span class="p">,</span> <span class="mf">5</span>
     
-    t = title(text='Three lines example') 
-    chart = open_flash_chart()
-    chart.title = t
-    chart.add_element(l1)
-    chart.add_element(l2)    
-    chart.add_element(l3)
-    chart.y_axis = y
-    return chart      
-</pre>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">title</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s">&#39;Three lines example&#39;</span><span class="p">)</span> 
+    <span class="n">chart</span> <span class="o">=</span> <span class="n">open_flash_chart</span><span class="p">()</span>
+    <span class="n">chart</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="n">t</span>
+    <span class="n">chart</span><span class="o">.</span><span class="n">add_element</span><span class="p">(</span><span class="n">l1</span><span class="p">)</span>
+    <span class="n">chart</span><span class="o">.</span><span class="n">add_element</span><span class="p">(</span><span class="n">l2</span><span class="p">)</span>    
+    <span class="n">chart</span><span class="o">.</span><span class="n">add_element</span><span class="p">(</span><span class="n">l3</span><span class="p">)</span>
+    <span class="n">chart</span><span class="o">.</span><span class="n">y_axis</span> <span class="o">=</span> <span class="n">y</span>
+    <span class="k">return</span> <span class="n">chart</span>
+</pre></div>
+</pre> 
+	<div id="json">
+		<p>Data used to generate the chart &mdash; <a href="data/manylines.json">manylines.json</a></p>
+	</div>
 
 							
 						</div>
 					</div>
 				</div>
-				<div class="yui-b" id="sidebar">
+				<div class="yui-b" id="sidebar"> 
 					<h3>
 						Chart Demos
 					</h3>
-					    <ul><li><a href="line.html">Line</a></li>
+					    <dl><dt class="el2">Area Charts</dt><dd>
+<li><a href="area_hollow.html">Area Hollow Chart</a></li>
+<li><a href="area_line.html">Area Line Chart</a></li>
+</dd>
+<dt class="el2">Bar Charts</dt><dd>
+<li><a href="bar.html">Bar Chart</a></li>
+<li><a href="bar_2.html">Bar Chart 2</a></li>
+</dd>
+<dt class="el2">Bar Filled Charts</dt><dd>
+<li><a href="bar_filled.html">Bar Filled Chart</a></li>
+</dd>
+<dt class="el2">Horizontal Bar Charts</dt><dd>
+<li><a href="horizontal_bar.html">Horizontal Bar Chart</a></li>
+</dd>
+<dt class="el2">Line Charts</dt><dd>
+<li><a href="line.html">Line</a></li>
 <li><a href="line_dot.html">Line Dot</a></li>
 <li><a href="line_hollow.html">Line Hollow</a></li>
 <li><a href="manylines.html">Many Lines</a></li>
+</dd>
+<dt class="el2">Scatter Charts</dt><dd>
+<li><a href="scatter_chart.html">Scatter Chart</a></li>
+</dd>
+<dt class="el2">X Axis Labels</dt><dd>
 <li><a href="x_axis_labels_1.html">X Axis Labels 1</a></li>
-<li><a href="x_axis_labels_3.html">X Axis Labels 3</a></li></ul> 
+<li><a href="x_axis_labels_3.html">X Axis Labels 3</a></li>
+</dd></dl> 
 					<h3>
 						Resources
 					</h3>

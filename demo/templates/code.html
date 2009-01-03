@@ -17,8 +17,11 @@
 {%block content %}
 	<h2>{{title}}</h2>
 	<div id="chart_{{name}}"></div>
-		{{doc}}
-	<pre>{{code}}</pre>
+	<div id="doc">{{doc}}</div>
+	<pre>{{code}}</pre> 
+	<div id="json">
+		<p>Data used to generate the chart &mdash; <a href="data/{{name}}.json">{{name}}.json</a></p>
+	</div>
 {% endblock %}  
 
 {% block sidebar %} {{sidebar}} {% endblock %}

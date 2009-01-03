@@ -3,7 +3,7 @@
 <html>
 	<head>
 		<title>
-			Python Open Flash Chart (pyOFC2) &em;  X Axis Labels 1 
+			Python Open Flash Chart (pyOFC2) &mdash;  X Axis Labels 1 
 		</title>
 		<meta name="author" content="Pradeep Kishore Gowda">
 
@@ -36,43 +36,65 @@
 							
 	<h2>X Axis Labels 1</h2>
 	<div id="chart_x_axis_labels_1"></div>
-		<p>Simple X Axis Lables</p>
-	<pre>def test_x_axis_labels_1():
-    '''
-    X Axis Labels 1
+	<div id="doc"><p>Simple X Axis Lables</p>
+</div>
+	<pre><div class="syntax"><pre><span class="k">def</span> <span class="nf">test_x_axis_labels_1</span><span class="p">():</span>
     
-    Simple X Axis Lables
-    '''
-    t = title(text='X Axis Labels')
-    l = line_dot()
-    l.values = range(9,0,-1)
+    <span class="n">t</span> <span class="o">=</span> <span class="n">title</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s">&#39;X Axis Labels&#39;</span><span class="p">)</span>
+    <span class="n">l</span> <span class="o">=</span> <span class="n">line_dot</span><span class="p">()</span>
+    <span class="n">l</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mf">9</span><span class="p">,</span><span class="mf">0</span><span class="p">,</span><span class="o">-</span><span class="mf">1</span><span class="p">)</span>
     
-    x = x_axis()
-    x.colour = '#428C3E'
-    x.grid_colour = '#86BF83'
-    lbl = labels(labels=['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'])
-    x.labels = lbl
-    chart = open_flash_chart()
-    chart.title = t
-    chart.add_element(l)
-    chart.x_axis = x
-    return chart
-</pre>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x_axis</span><span class="p">()</span>
+    <span class="n">x</span><span class="o">.</span><span class="n">colour</span> <span class="o">=</span> <span class="s">&#39;#428C3E&#39;</span>
+    <span class="n">x</span><span class="o">.</span><span class="n">grid_colour</span> <span class="o">=</span> <span class="s">&#39;#86BF83&#39;</span>
+    <span class="n">lbl</span> <span class="o">=</span> <span class="n">labels</span><span class="p">(</span><span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;one&#39;</span><span class="p">,</span> <span class="s">&#39;two&#39;</span><span class="p">,</span> <span class="s">&#39;three&#39;</span><span class="p">,</span> <span class="s">&#39;four&#39;</span><span class="p">,</span> <span class="s">&#39;five&#39;</span><span class="p">,</span> <span class="s">&#39;six&#39;</span><span class="p">,</span> <span class="s">&#39;seven&#39;</span><span class="p">,</span> <span class="s">&#39;eight&#39;</span><span class="p">,</span> <span class="s">&#39;nine&#39;</span><span class="p">])</span>
+    <span class="n">x</span><span class="o">.</span><span class="n">labels</span> <span class="o">=</span> <span class="n">lbl</span>
+    <span class="n">chart</span> <span class="o">=</span> <span class="n">open_flash_chart</span><span class="p">()</span>
+    <span class="n">chart</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="n">t</span>
+    <span class="n">chart</span><span class="o">.</span><span class="n">add_element</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+    <span class="n">chart</span><span class="o">.</span><span class="n">x_axis</span> <span class="o">=</span> <span class="n">x</span>
+    <span class="k">return</span> <span class="n">chart</span>
+</pre></div>
+</pre> 
+	<div id="json">
+		<p>Data used to generate the chart &mdash; <a href="data/x_axis_labels_1.json">x_axis_labels_1.json</a></p>
+	</div>
 
 							
 						</div>
 					</div>
 				</div>
-				<div class="yui-b" id="sidebar">
+				<div class="yui-b" id="sidebar"> 
 					<h3>
 						Chart Demos
 					</h3>
-					    <ul><li><a href="line.html">Line</a></li>
+					    <dl><dt class="el2">Area Charts</dt><dd>
+<li><a href="area_hollow.html">Area Hollow Chart</a></li>
+<li><a href="area_line.html">Area Line Chart</a></li>
+</dd>
+<dt class="el2">Bar Charts</dt><dd>
+<li><a href="bar.html">Bar Chart</a></li>
+<li><a href="bar_2.html">Bar Chart 2</a></li>
+</dd>
+<dt class="el2">Bar Filled Charts</dt><dd>
+<li><a href="bar_filled.html">Bar Filled Chart</a></li>
+</dd>
+<dt class="el2">Horizontal Bar Charts</dt><dd>
+<li><a href="horizontal_bar.html">Horizontal Bar Chart</a></li>
+</dd>
+<dt class="el2">Line Charts</dt><dd>
+<li><a href="line.html">Line</a></li>
 <li><a href="line_dot.html">Line Dot</a></li>
 <li><a href="line_hollow.html">Line Hollow</a></li>
 <li><a href="manylines.html">Many Lines</a></li>
+</dd>
+<dt class="el2">Scatter Charts</dt><dd>
+<li><a href="scatter_chart.html">Scatter Chart</a></li>
+</dd>
+<dt class="el2">X Axis Labels</dt><dd>
 <li><a href="x_axis_labels_1.html">X Axis Labels 1</a></li>
-<li><a href="x_axis_labels_3.html">X Axis Labels 3</a></li></ul> 
+<li><a href="x_axis_labels_3.html">X Axis Labels 3</a></li>
+</dd></dl> 
 					<h3>
 						Resources
 					</h3>

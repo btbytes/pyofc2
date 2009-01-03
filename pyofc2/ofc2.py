@@ -35,7 +35,11 @@ class OFCBase(dict):
         'font_size':'font-size', 'fontsize': 'font-size',
         'color':'colour', 'bg_color':'bg_colour', 'bgcolor':'bg_colour',
         'dot_size': 'dot-size', 'dotsize':'dot-size', 'grid_colour': 'grid-colour',
-        'grid_color': 'grid-colour', 'tick_height': 'tick-height', 'on_click':'on-click',
+        'grid_color': 'grid-colour', 'tick_height': 'tick-height', 
+        'on_click':'on-click', 'outline_color':'outline-colour',
+        'outline_colour':'outline-colour', 'fill_color':'fill',
+        'fill_colour':'fill', 'fill_alpha':'fill-alpha',
+        'halo_size':'halo-size', 'halosize':'halo-size',
     }
      
     def __setattr__(self, k, w):       
@@ -68,7 +72,7 @@ labels = ofc_factory('labels', ['labels'])
 x_axis_label = ofc_factory('x_axis_label', ['text', 'steps', 'vertical', 'color', 'colour', 'size', 'visible', 'rotate' ])
 x_axis_labels = ofc_factory('x_axis_labels', ['labels','steps', 'vertical', 'colour', 'color', 'size','rotate'])
   
-axis =  ofc_factory('axis', ['stroke', 'tick_height', 'colour', 'grid_colour', 'steps', 'min', 'max', 'labels'])
+axis =  ofc_factory('axis', ['stroke', 'tick_height', 'colour', 'grid_colour', 'steps', 'min', 'max', 'labels', 'offset'])
 class x_axis(axis): pass
 class y_axis(axis): pass
 class y_axis_right(axis): pass
@@ -76,14 +80,36 @@ class y_axis_right(axis): pass
 tooltip = ofc_factory('tooltip', ['shadow', 'stroke', 'colour', 'bg_colour', 'title_style', 'body_style'])
 
 element = ofc_factory('element', ['type','alpha', 'colour', 'color', 'text', 'fontsize', 'values'])
+
 linefactory = ofc_factory('_line', ['type','alpha', 'colour','color', 'text', 
     'fontsize', 'values', 'halo_size', 'width', 'dot_size', 'on_click'])
 line = lambda **kw: linefactory(type='line',**kw)     
 line_dot = lambda **kw: linefactory(type='line_dot', **kw)
 line_hollow = lambda **kw: linefactory(type='line_hollow', **kw)
 
-bar = lambda **kw: element(type='bar',**kw)
-bar_stack = lambda **kw: element(type='barstack',**kw)
+key = ofc_factory('key', ['text', 'size'])
+
+barfactory = ofc_factory('_bar', ['type', 'values', 'alpha', 'color', 'colour', 'key'])
+bar = lambda **kw: barfactory(type='bar',**kw)
+
+barfilledfactory = ofc_factory('_bar', ['type', 'values', 'alpha', 'color', 
+    'colour', 'key', 'outline_colour', 'outline_color'])
+bar_filled = lambda **kw: barfilledfactory(type='bar_filled',**kw)
+
+hbarfactory = ofc_factory('_hbar', ['type', 'values', 'color', 'colour', 'tooltip', 'tip'])
+hbar = lambda **kw: hbarfactory(type='hbar', **kw)
+hbar_value = ofc_factory('hbar_factory', ['left', 'right', 'tip'])
+bar_stack = lambda **kw: element(type='barstack',**kw)  
+
+area_linefactory = ofc_factory('_area_line', ['type', 'values', 'color', 'colour', 
+    'tooltip', 'width', 'dot_size', 'dotsize', 'halo_size', 'halosize' 'key', 'fill_colour', 
+    'fill_color', 'fill_alpha']) 
+area_line = lambda **kw: area_linefactory(type='area_line', **kw)
+area_hollow = lambda **kw: area_linefactory(type='area_hollow', **kw)
+
+scatterfactory = ofc_factory('_scatter', ['type', 'dot_size', 'color', 'colour', 'values'])
+scatter = lambda **kw: scatterfactory(type='scatter', **kw)
+scatter_value = ofc_factory('values', ['x','y']) 
 
 class open_flash_chart(dict):               
     typetable = {
