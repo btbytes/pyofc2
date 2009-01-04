@@ -336,7 +336,155 @@ def test_scatter_chart():
     chart.y_axis = y
     return chart
         
-        
+
+def test_scatter_line_chart():
+    '''
+    Scatter Charts/Scatter Line Chart
+    Make a scatter line chart
+    '''
+    
+    chart = open_flash_chart()
+    chart.title = title(text='Scatter Line Chart')
+    s = scatter_line(colour="#FFD600", dot_size=3)
+    x = 0.0
+    y = 0
+    v = []
+    while(x<25):
+        v.append(scatter_value(x=x,y=y))
+        y = random.randint(-20,20)/10
+        if y > 10: y = 10
+        if y < -10 : y = -10
+        x += random.randint(5, 15)/10
+    s.values = v
+    chart.add_element(s)
+    
+    xa = x_axis()
+    xa.min, xa.max = 0,25
+    chart.x_axis = xa
+    ya = y_axis()
+    ya.min, ya.max = -10, 10
+    chart.y_axis = ya
+    return chart
+                
+
+def test_radar_charts_1():
+    '''
+    Radar Charts/Radar Chart 
+    Radar Chart with filled area and value labels.
+    '''                                           
+    chart = open_flash_chart() 
+    chart.title = title(text='Radar Chart')
+    area = area_hollow()
+    area.width = 1
+    area.dot_size = 1
+    area.halo_size = 1
+    area.colour = '#45909F'
+    area.fill_colour = '#45909F'
+    area.fill_alpha = 0.4
+    area.loop = True
+    area.values = [3, 4, 5, 4, 3, 3, 2.5]
+    chart.add_element(area) 
+    r = radar_axis(max=5)
+    r.colour ='#EFD1EF'
+    r.grid_colour = '#EFD1EF'
+    ra = radar_axis_labels(labels=['0','1','2','3','4','5'])
+    ra.colour = '#9F819F'
+    r.labels = ra
+    chart.radar_axis = r
+    tip = tooltip()
+    tip.proximity = 1
+    chart.tooltip = tip
+    chart.bg_colour = '#DFFFEC'
+    return chart    
+    
+def test_radar_charts_2():
+    '''
+    Radar Charts/Lines & Spoke labels
+    
+    Radar Chart  with lines, spoke labels and keys
+    For radar charts it is neccessary to set the line style to 'loop' so the first and last points are connected. 
+    In the above example you can see that the gold line has not had its loop attribute set.
+
+    The default tooltip is of no use with radar charts so we change its behaviour to proximity.
+    '''
+    chart = open_flash_chart() 
+    chart.title = title(text='Radar Chart')
+    line1 = line_hollow()
+    line1.width = 1
+    line1.dot_size = 3
+    line1.halo_size = 2
+    line1.colour = '#FBB829'
+    line1.values = [3, 4, 5, 4, 3, 3, 2.5]
+    line1.tip = "Gold #val#"
+    line1.text = 'Mr. Gold'
+    line1.font_size = 10
+    chart.add_element(line1)
+    
+    line2 = line_dot()
+    line2.values = [2 for i in range(7)]
+    line2.halo_size = 2
+    line2.width = 1
+    line2.dot_size = 3
+    line2.colour = '#80000FF'
+    line2.tip = 'Purple #val#'
+    line2.text = 'Mr. Purple'
+    line2.font_size = 10
+    line2.loop = True
+    chart.add_element(line2)
+     
+    r = radar_axis(max=5)
+    r.colour ='#DAD5E0'
+    r.grid_colour = '#DAD5E0'
+    ra = radar_axis_labels(labels=['Zero','','','Middle','','High'])
+    ra.colour = '#9F819F'
+    r.labels = ra
+    sa = radar_spoke_labels(labels=['Strength', 'Smarts', 'Sweet<br>Tooth',
+            'Armour', 'Max Hit Points', '???', 'Looks Like a Monkey'])
+    sa.colour = '#9F819F'
+    chart.radar_axis = r 
+    r.spoke_labels = sa
+    tip = tooltip()
+    tip.proximity = 1
+    chart.tooltip = tip
+    chart.bg_colour = '#FFFFFF'
+    return chart
+    
+def test_radar_charts_3():
+    '''
+    Radar Charts/Stepped axis
+    Radar Chart with stepped axis and custom tooltips for individual points.
+    '''
+    chart = open_flash_chart()
+    chart.title = title(text='Radar Chart')
+    
+    val1 = [30,50,60,70,80,90,100,115,130,115,100,90,80,70,60,50]
+    spokes = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p']
+    val2 = []
+    
+    for i in val1:                                   
+        txt = "#val#<br>Spoke: %s" % i 
+        tmp = dot_value(value=i,  colour='#D41E47', tip=txt)
+        val2.append(tmp)
+    line = line_hollow()
+    line.values = val2
+    line.halo_size = 0
+    line.width = 2
+    line.dot_size = 6
+    line.colour = '#FBB829'
+    line.text = 'Hearts'
+    line.font_size = 10
+    line.loop = True
+    chart.add_element(line)
+    r = radar_axis(max=150)
+    r.step = 10
+    r.colour = '#DAD5E0'
+    r.grid_colour = '#EFEFEF'
+    chart.radar_axis = r
+    tip = tooltip(proximity=1)
+    chart.tooltip = tip
+    chart.bg_colour = '#FFFFFF'
+    return chart    
+         
 def test_x_axis_labels_1():
     '''
     X Axis Labels/X Axis Labels 1
