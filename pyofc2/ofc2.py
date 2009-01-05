@@ -71,7 +71,7 @@ class y_legend(title): pass
 
 labels = ofc_factory('labels', ['labels'])
 x_axis_label = ofc_factory('x_axis_label', ['text', 'steps', 'vertical', 'color', 'colour', 'size', 'visible', 'rotate' ])
-x_axis_labels = ofc_factory('x_axis_labels', ['labels'])
+x_axis_labels = ofc_factory('x_axis_labels', ['labels', 'steps'])
 radar_axis_labels = ofc_factory('radar_axis_labels', ['labels'])  
 radar_spoke_labels = ofc_factory('radar_spoke_labels',['labels'])
 
