@@ -565,7 +565,7 @@ docs = [
     </p>
 
     <h3>Download and Install</h3> 
-    <p>The source is available at <a href="">http://github.com/btbytes/pyofc2</a>. <br/>Use the <img src="http://assets2.github.com/images/modules/repos/download_button.png" /> button or use <code>git</code>
+    <p>The source is available at <a href="http://github.com/btbytes/pyofc2">http://github.com/btbytes/pyofc2</a>. <br/>Use the <img src="http://assets2.github.com/images/modules/repos/download_button.png" /> button or use <code>git</code>
     <br/>
     <pre><code> $git clone git://github.com/btbytes/pyofc2.git </code></pre>   
     </p>
