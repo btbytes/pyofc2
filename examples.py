@@ -538,6 +538,25 @@ def test_x_axis_labels_3():
     chart.x_axis = x
     return chart
 
+
+def test_shape():
+    '''
+    Shapes/Shapes
+    Add Shapes to charts.
+    '''                  
+    chart = open_flash_chart()
+    t = title(text="Random shape")
+    chart.title = t    
+    s = shape(colour="#89ad34")
+    s.values = [{'x': random.randint(1,10), 'y': random.randint(1,10)} for i in range(5)]
+    chart.add_element(s)        
+    x = x_axis()
+    x.offset = False
+    x.labels = labels(labels=months)
+    chart.x_axis = x                                                         
+    return chart
+    
+    
 def _test():
     test_line()
     test_line_dot()
