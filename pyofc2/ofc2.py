@@ -74,12 +74,14 @@ x_axis_label = ofc_factory('x_axis_label', ['text', 'steps', 'color', 'colour', 
 x_axis_labels = ofc_factory('x_axis_labels', ['labels', 'rotate', 'steps'])
 radar_axis_labels = ofc_factory('radar_axis_labels', ['labels'])  
 radar_spoke_labels = ofc_factory('radar_spoke_labels',['labels'])
-
+shapefactory = ofc_factory('_shape', ['type','colour', 'color', 'values'])
+shape = lambda **kw: shapefactory(type='shape', **kw)
+shape_value = ofc_factory('shape_value', ['x', 'y'])
 
 axis =  ofc_factory('axis', ['stroke', 'tick_height', 'colour', 
     'grid_colour', 'steps', 'min', 'max', 'labels', 'offset', 'radar',
     'spoke_labels'
-    ])
+    ])                                          
 class x_axis(axis): pass
 class y_axis(axis): pass
 class y_axis_right(axis): pass
