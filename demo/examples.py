@@ -588,6 +588,12 @@ docs = [
     <br/>
     <pre><code> $git clone git://github.com/btbytes/pyofc2.git </code></pre>   
     </p>
+    <h3>Sample code</h3>
+    <p> The <code>demo</code> directory has a examples.py file which illustrates how to use all the charts available in PyOFC2</p>
+    <p> The see the examples, run <pre><code>$ python examples.py</code></pre></p>
+
+    <p>which will compile all the examples and generate HTML files containing charts</p>
+    <p>To see the generated charts, run <pre><code>$ ./start.sh </code></pre></p>
     ''' },
     ]
     
