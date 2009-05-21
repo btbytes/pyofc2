@@ -594,6 +594,9 @@ docs = [
 
     <p>which will compile all the examples and generate HTML files containing charts</p>
     <p>To see the generated charts, run <pre><code>$ ./start.sh </code></pre></p>
+
+    <h3>How to use PyOFC2 with Django</h3>
+    <p>See <a href="http://github.com/btbytes/djofc2_demo/tree/master">this demo Django application</a> code.
     ''' },
     ]
     
