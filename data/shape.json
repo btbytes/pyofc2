@@ -1,0 +1,1 @@
+{"x_axis": {"labels": {"labels": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]}, "offset": false}, "elements": [{"values": [{"y": 4, "x": 10}, {"y": 7, "x": 3}, {"y": 8, "x": 2}, {"y": 8, "x": 1}, {"y": 3, "x": 9}], "colour": "#89ad34", "type": "shape"}], "title": {"text": "Random shape"}}

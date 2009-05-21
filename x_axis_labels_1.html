@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>
+			Python Open Flash Chart (pyOFC2) &mdash;  X Axis Labels 1 
+		</title>
+		<meta name="author" content="Pradeep Kishore Gowda">
+
+		<link rel="stylesheet" href="css/reset-fonts-grids.css" type="text/css">
+		<link rel="stylesheet" href="css/style.css" type="text/css"> 
+		<link rel="stylesheet" href="css/pygments.css" type="text/css"> 		
+				
+	<script type="text/javascript" src="js/swfobject.js">
+	</script>
+	<script type="text/javascript">
+		swfobject.embedSWF(
+			"open-flash-chart.swf", "chart_x_axis_labels_1", "780", "300",
+			"9.0.0", "expressInstall.swf",
+			{"data-file":"data/x_axis_labels_1.json"}
+		);
+	</script>
+
+	</head>
+	<body>
+		<div id="doc2" class="yui-t2">
+			<div id="hd">
+				<h1>
+					<a href="index.html">pyOFC2</a> Python Open Flash Chart 2
+				</h1>
+			</div>
+			<div id="bd">
+				<div id="yui-main">
+					<div class="yui-b">
+						<div class="yui-g">
+							
+	<h2>X Axis Labels 1</h2>
+	<div id="chart_x_axis_labels_1"></div>
+	<div id="doc"><p>Simple X Axis Lables</p>
+</div>
+	<pre><div class="syntax"><pre><span class="k">def</span> <span class="nf">test_x_axis_labels_1</span><span class="p">():</span>
+    
+    <span class="n">t</span> <span class="o">=</span> <span class="n">title</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s">&#39;X Axis Labels&#39;</span><span class="p">)</span>
+    <span class="n">l</span> <span class="o">=</span> <span class="n">line_dot</span><span class="p">()</span>
+    <span class="n">l</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mf">9</span><span class="p">,</span><span class="mf">0</span><span class="p">,</span><span class="o">-</span><span class="mf">1</span><span class="p">)</span>
+    
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x_axis</span><span class="p">()</span>
+    <span class="n">x</span><span class="o">.</span><span class="n">colour</span> <span class="o">=</span> <span class="s">&#39;#428C3E&#39;</span>
+    <span class="n">x</span><span class="o">.</span><span class="n">grid_colour</span> <span class="o">=</span> <span class="s">&#39;#86BF83&#39;</span>
+    <span class="n">lbl</span> <span class="o">=</span> <span class="n">labels</span><span class="p">(</span><span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;one&#39;</span><span class="p">,</span> <span class="s">&#39;two&#39;</span><span class="p">,</span> <span class="s">&#39;three&#39;</span><span class="p">,</span> <span class="s">&#39;four&#39;</span><span class="p">,</span> <span class="s">&#39;five&#39;</span><span class="p">,</span> <span class="s">&#39;six&#39;</span><span class="p">,</span> <span class="s">&#39;seven&#39;</span><span class="p">,</span> <span class="s">&#39;eight&#39;</span><span class="p">,</span> <span class="s">&#39;nine&#39;</span><span class="p">])</span>
+    <span class="n">x</span><span class="o">.</span><span class="n">labels</span> <span class="o">=</span> <span class="n">lbl</span>
+    <span class="n">chart</span> <span class="o">=</span> <span class="n">open_flash_chart</span><span class="p">()</span>
+    <span class="n">chart</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="n">t</span>
+    <span class="n">chart</span><span class="o">.</span><span class="n">add_element</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+    <span class="n">chart</span><span class="o">.</span><span class="n">x_axis</span> <span class="o">=</span> <span class="n">x</span>
+    <span class="k">return</span> <span class="n">chart</span>
+</pre></div>
+</pre> 
+	<div id="json">
+		<p>Data used to generate the chart &mdash; <a href="data/x_axis_labels_1.json">x_axis_labels_1.json</a></p>
+	</div>
+
+							
+						</div>
+					</div>
+				</div>
+				<div class="yui-b" id="sidebar"> 
+					<h3>
+						Chart Demos
+					</h3>
+					    <dl><dt class="el2">Area Charts</dt><dd>
+<li><a href="area_hollow.html">Area Hollow Chart</a></li>
+<li><a href="area_line.html">Area Line Chart</a></li>
+</dd>
+<dt class="el2">Bar Charts</dt><dd>
+<li><a href="bar.html">Bar Chart</a></li>
+<li><a href="bar_2.html">Bar Chart 2</a></li>
+</dd>
+<dt class="el2">Bar Filled Charts</dt><dd>
+<li><a href="bar_filled.html">Bar Filled Chart</a></li>
+</dd>
+<dt class="el2">Horizontal Bar Charts</dt><dd>
+<li><a href="horizontal_bar.html">Horizontal Bar Chart</a></li>
+</dd>
+<dt class="el2">Line Charts</dt><dd>
+<li><a href="line.html">Line</a></li>
+<li><a href="line_dot.html">Line Dot</a></li>
+<li><a href="line_hollow.html">Line Hollow</a></li>
+<li><a href="manylines.html">Many Lines</a></li>
+</dd>
+<dt class="el2">Radar Charts</dt><dd>
+<li><a href="radar_charts_1.html">Radar Chart</a></li>
+<li><a href="radar_charts_2.html">Lines & Spoke labels</a></li>
+<li><a href="radar_charts_3.html">Stepped axis</a></li>
+</dd>
+<dt class="el2">Scatter Charts</dt><dd>
+<li><a href="scatter_chart.html">Scatter Chart</a></li>
+<li><a href="scatter_line_chart.html">Scatter Line Chart</a></li>
+</dd>
+<dt class="el2">Shapes</dt><dd>
+<li><a href="shape.html">Shapes</a></li>
+</dd>
+<dt class="el2">X Axis Labels</dt><dd>
+<li><a href="x_axis_labels_1.html">X Axis Labels 1</a></li>
+<li><a href="x_axis_labels_3.html">X Axis Labels 3</a></li>
+</dd></dl> 
+					<h3>
+						Resources
+					</h3>
+					<ul>
+						<li>
+							<a href="http://teethgrinder.co.uk/open-flash-chart-2/">Open Flash Chart</a>
+						</li>
+						<li>
+							<a href="http://github.com/btbytes/pyofc2">pyOFC2 source (github)</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div id="ft">
+			  &copy; 2009 <a href="http://pradeepgowda.com/">Pradeep Kishore Gowda</a>
+			</div>
+		</div>
+	</body>
+</html>

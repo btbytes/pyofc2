@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{%block extracss %}<link rel="stylesheet" href="css/pygments.css" type="text/css"> {% endblock %}
+{%block extrajs %}		
+	<script type="text/javascript" src="js/swfobject.js">
+	</script>
+	<script type="text/javascript">
+		swfobject.embedSWF(
+			"open-flash-chart.swf", "chart_{{name}}", "780", "300",
+			"9.0.0", "expressInstall.swf",
+			{"data-file":"{{datafile}}"}
+		);
+	</script>
+{% endblock %} 
+
+{% block title %} {{title}} {% endblock %} 
+
+{%block content %}
+	<h2>{{title}}</h2>
+	<div id="chart_{{name}}"></div>
+	<div id="doc">{{doc}}</div>
+	<pre>{{code}}</pre> 
+	<div id="json">
+		<p>Data used to generate the chart &mdash; <a href="data/{{name}}.json">{{name}}.json</a></p>
+	</div>
+{% endblock %}  
+
+{% block sidebar %} {{sidebar}} {% endblock %}

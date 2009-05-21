@@ -1,0 +1,58 @@
+/* Custom CSS Styles for PyOFC2 Demo
+- btbytes 2009.01.01
+*/ 
+
+body,html{
+	font-size:93%;
+}                     
+#hd {
+	margin: 2em 0 1em 0;
+}
+#hd h1{
+	font-size:2em;
+	color: #aaa; 
+	
+}
+#hd h1 a{  
+	color:#0000ff; 
+	text-decoration:none;
+}
+#bd, #ft{
+	border: dotted 1px #666;
+	margin: 0 0  1em 0;
+	padding: 1em;
+}
+h3{
+	font-size:1.2em;
+	color:#a00;
+	margin: 1em 0 0.5em 0;
+}    
+
+dt.el2{
+    margin:0.5em 0;
+    font-weight: bold;
+    
+}
+           
+li{
+	margin:0.2em 0;
+	padding: 0 0 0 0.5em;
+	
+}
+#doc{
+    margin: 1em 0 0 0;
+}  
+#json{
+     color:#aaa;
+     font-size:0.9em;
+}
+#bd h2{
+    font-size:1.3em;
+    color:#333;
+    margin:1em 0;
+}
+
+#bd pre{
+    margin-top:2em;
+   
+}
