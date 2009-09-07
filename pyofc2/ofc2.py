@@ -35,6 +35,7 @@ class OFCBase(dict):
         'font_size':'font-size', 'fontsize': 'font-size',
         'color':'colour', 'bg_color':'bg_colour', 'bgcolor':'bg_colour',
         'dot_size': 'dot-size', 'dotsize':'dot-size', 'grid_colour': 'grid-colour',
+        'dot_style': 'dot-style',
         'grid_color': 'grid-colour', 'tick_height': 'tick-height',
         'on_click':'on-click', 'outline_color':'outline-colour',
         'outline_colour':'outline-colour', 'fill_color':'fill',
@@ -93,15 +94,21 @@ element = ofc_factory('element', ['type','alpha', 'colour', 'color', 'text', 'fo
 
 linefactory = ofc_factory('_line', ['type','alpha', 'colour','color', 'text',
     'fontsize', 'font_size', 'values', 'halo_size', 'width', 'dot_size', 'on_click', 'tip',
-    'loop'])
+    'loop', 'dot_style'])
 line = lambda **kw: linefactory(type='line',**kw)
 line_dot = lambda **kw: linefactory(type='line_dot', **kw)
 line_hollow = lambda **kw: linefactory(type='line_hollow', **kw)
 
 key = ofc_factory('key', ['text', 'size'])
 dot_value = ofc_factory('value', ['value', 'colour', 'color', 'tip'])
-barfactory = ofc_factory('_bar', ['type', 'values', 'alpha', 'color', 'colour', 'key'])
+dotfactory = ofc_factory('_dot-style', ['type', 'dot_style', 'dot_size', 'halo_size', 'colour', 'rotation', 'hollow', 'on_click', 'style'])
+dot = lambda **kw: dotfactory(type='solid-dot', **kw)
+hollowdot = lambda **kw: dotfactory(type='hollow-dot', **kw)
+stardot = lambda **kw: dotfactory(type='star', **kw)
+
+barfactory = ofc_factory('_bar', ['type', 'values', 'alpha', 'color', 'colour', 'key', 'on_click'])
 bar = lambda **kw: barfactory(type='bar',**kw)
+barvalue = ofc_factory('values', ['colour', 'tip', 'top', 'bottom'])
 
 barfilledfactory = ofc_factory('_bar', ['type', 'values', 'alpha', 'color',
     'colour', 'key', 'outline_colour', 'outline_color'])
@@ -123,10 +130,10 @@ scatterfactory = ofc_factory('_scatter', ['type', 'dot_size', 'color', 'colour',
 scatter = lambda **kw: scatterfactory(type='scatter', **kw)
 scatter_line = lambda **kw: scatterfactory(type='scatter_line', **kw)
 
-pie_value = ofc_factory('values', ['label', 'label-color', 'font-size', 'tooltip', 'color', 'colour'])
+pie_value = ofc_factory('values', ['label', 'label-color', 'font-size', 'tooltip', 'color', 'colour', 'value', 'tip'])
 piefactory = ofc_factory('_pie', ['alpha', 'colour', 'color', 'text',
         'fontsize', 'values', 'start_angle', 'animate', 'colours', 'label_colour',
-        'on_click', 'radius'])
+        'on_click', 'radius', 'type'])
 pie = lambda **kw: piefactory(type='pie', **kw)
 
 #TODO: derive open_flash_chart class from OFCBase . use ofc_factory
