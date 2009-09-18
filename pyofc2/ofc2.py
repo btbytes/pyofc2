@@ -92,6 +92,8 @@ tooltip = ofc_factory('tooltip', ['shadow', 'stroke', 'colour', 'bg_colour', 'ti
 
 element = ofc_factory('element', ['type','alpha', 'colour', 'color', 'text', 'fontsize', 'values'])
 
+entry = ofc_factory('values', ['text', 'fontsize', 'colour', 'color'])
+
 linefactory = ofc_factory('_line', ['type','alpha', 'colour','color', 'text',
     'fontsize', 'font_size', 'values', 'halo_size', 'width', 'dot_size', 'on_click', 'tip',
     'loop', 'dot_style'])
@@ -99,7 +101,7 @@ line = lambda **kw: linefactory(type='line',**kw)
 line_dot = lambda **kw: linefactory(type='line_dot', **kw)
 line_hollow = lambda **kw: linefactory(type='line_hollow', **kw)
 
-key = ofc_factory('key', ['text', 'size'])
+key = ofc_factory('key', ['text', 'size', 'colour', 'font-size'])
 dot_value = ofc_factory('value', ['value', 'colour', 'color', 'tip'])
 dotfactory = ofc_factory('_dot-style', ['type', 'dot_style', 'dot_size', 'halo_size', 'colour', 'rotation', 'hollow', 'on_click', 'style'])
 dot = lambda **kw: dotfactory(type='solid-dot', **kw)
@@ -117,7 +119,9 @@ bar_filled = lambda **kw: barfilledfactory(type='bar_filled',**kw)
 hbarfactory = ofc_factory('_hbar', ['type', 'values', 'color', 'colour', 'tooltip', 'tip'])
 hbar = lambda **kw: hbarfactory(type='hbar', **kw)
 hbar_value = ofc_factory('hbar_factory', ['left', 'right', 'tip'])
-bar_stack = lambda **kw: element(type='barstack',**kw)
+
+barstackfactory = ofc_factory('_barstack', ['type', 'values', 'keys', 'tip', 'color', 'colours'])
+bar_stack = lambda **kw: barstackfactory(type='bar_stack',**kw)
 
 area_linefactory = ofc_factory('_area_line', ['type', 'values', 'color', 'colour',
     'tooltip', 'width', 'dot_size', 'dotsize', 'halo_size', 'halosize' 'key', 'fill_colour',
