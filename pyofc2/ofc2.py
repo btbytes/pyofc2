@@ -120,7 +120,7 @@ hbarfactory = ofc_factory('_hbar', ['type', 'values', 'color', 'colour', 'toolti
 hbar = lambda **kw: hbarfactory(type='hbar', **kw)
 hbar_value = ofc_factory('hbar_factory', ['left', 'right', 'tip'])
 
-barstackfactory = ofc_factory('_barstack', ['type', 'values', 'keys', 'tip', 'color', 'colours'])
+barstackfactory = ofc_factory('_barstack', ['type', 'values', 'keys', 'tip', 'color', 'colours', 'on_click'])
 bar_stack = lambda **kw: barstackfactory(type='bar_stack',**kw)
 
 area_linefactory = ofc_factory('_area_line', ['type', 'values', 'color', 'colour',
@@ -134,7 +134,7 @@ scatterfactory = ofc_factory('_scatter', ['type', 'dot_size', 'color', 'colour',
 scatter = lambda **kw: scatterfactory(type='scatter', **kw)
 scatter_line = lambda **kw: scatterfactory(type='scatter_line', **kw)
 
-pie_value = ofc_factory('values', ['label', 'label-color', 'font-size', 'tooltip', 'color', 'colour', 'value', 'tip'])
+pie_value = ofc_factory('values', ['label', 'label-color', 'font-size', 'tooltip', 'color', 'colour', 'value', 'tip', 'on_click'])
 piefactory = ofc_factory('_pie', ['alpha', 'colour', 'color', 'text',
         'fontsize', 'values', 'start_angle', 'animate', 'colours', 'label_colour',
         'on_click', 'radius', 'type'])
