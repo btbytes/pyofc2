@@ -38,39 +38,38 @@
 	<div id="chart_radar_charts_3"></div>
 	<div id="doc"><p>Radar Chart with stepped axis and custom tooltips for individual points.</p>
 </div>
-	<pre><div class="syntax"><pre><span class="k">def</span> <span class="nf">test_radar_charts_3</span><span class="p">():</span>
+	<pre>def test_radar_charts_3():
     
-    <span class="n">chart</span> <span class="o">=</span> <span class="n">open_flash_chart</span><span class="p">()</span>
-    <span class="n">chart</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="n">title</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s">&#39;Radar Chart&#39;</span><span class="p">)</span>
+    chart = open_flash_chart()
+    chart.title = title(text='Radar Chart')
     
-    <span class="n">val1</span> <span class="o">=</span> <span class="p">[</span><span class="mf">30</span><span class="p">,</span><span class="mf">50</span><span class="p">,</span><span class="mf">60</span><span class="p">,</span><span class="mf">70</span><span class="p">,</span><span class="mf">80</span><span class="p">,</span><span class="mf">90</span><span class="p">,</span><span class="mf">100</span><span class="p">,</span><span class="mf">115</span><span class="p">,</span><span class="mf">130</span><span class="p">,</span><span class="mf">115</span><span class="p">,</span><span class="mf">100</span><span class="p">,</span><span class="mf">90</span><span class="p">,</span><span class="mf">80</span><span class="p">,</span><span class="mf">70</span><span class="p">,</span><span class="mf">60</span><span class="p">,</span><span class="mf">50</span><span class="p">]</span>
-    <span class="n">spokes</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;a&#39;</span><span class="p">,</span><span class="s">&#39;b&#39;</span><span class="p">,</span><span class="s">&#39;c&#39;</span><span class="p">,</span><span class="s">&#39;d&#39;</span><span class="p">,</span><span class="s">&#39;e&#39;</span><span class="p">,</span><span class="s">&#39;f&#39;</span><span class="p">,</span><span class="s">&#39;g&#39;</span><span class="p">,</span><span class="s">&#39;h&#39;</span><span class="p">,</span><span class="s">&#39;i&#39;</span><span class="p">,</span><span class="s">&#39;j&#39;</span><span class="p">,</span><span class="s">&#39;k&#39;</span><span class="p">,</span><span class="s">&#39;l&#39;</span><span class="p">,</span><span class="s">&#39;m&#39;</span><span class="p">,</span><span class="s">&#39;n&#39;</span><span class="p">,</span><span class="s">&#39;o&#39;</span><span class="p">,</span><span class="s">&#39;p&#39;</span><span class="p">]</span>
-    <span class="n">val2</span> <span class="o">=</span> <span class="p">[]</span>
+    val1 = [30,50,60,70,80,90,100,115,130,115,100,90,80,70,60,50]
+    spokes = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p']
+    val2 = []
     
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">val1</span><span class="p">:</span>                                   
-        <span class="n">txt</span> <span class="o">=</span> <span class="s">&quot;#val#&lt;br&gt;Spoke: </span><span class="si">%s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="n">i</span> 
-        <span class="n">tmp</span> <span class="o">=</span> <span class="n">dot_value</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="n">i</span><span class="p">,</span>  <span class="n">colour</span><span class="o">=</span><span class="s">&#39;#D41E47&#39;</span><span class="p">,</span> <span class="n">tip</span><span class="o">=</span><span class="n">txt</span><span class="p">)</span>
-        <span class="n">val2</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tmp</span><span class="p">)</span>
-    <span class="n">line</span> <span class="o">=</span> <span class="n">line_hollow</span><span class="p">()</span>
-    <span class="n">line</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="n">val2</span>
-    <span class="n">line</span><span class="o">.</span><span class="n">halo_size</span> <span class="o">=</span> <span class="mf">0</span>
-    <span class="n">line</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="mf">2</span>
-    <span class="n">line</span><span class="o">.</span><span class="n">dot_size</span> <span class="o">=</span> <span class="mf">6</span>
-    <span class="n">line</span><span class="o">.</span><span class="n">colour</span> <span class="o">=</span> <span class="s">&#39;#FBB829&#39;</span>
-    <span class="n">line</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s">&#39;Hearts&#39;</span>
-    <span class="n">line</span><span class="o">.</span><span class="n">font_size</span> <span class="o">=</span> <span class="mf">10</span>
-    <span class="n">line</span><span class="o">.</span><span class="n">loop</span> <span class="o">=</span> <span class="bp">True</span>
-    <span class="n">chart</span><span class="o">.</span><span class="n">add_element</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
-    <span class="n">r</span> <span class="o">=</span> <span class="n">radar_axis</span><span class="p">(</span><span class="nb">max</span><span class="o">=</span><span class="mf">150</span><span class="p">)</span>
-    <span class="n">r</span><span class="o">.</span><span class="n">step</span> <span class="o">=</span> <span class="mf">10</span>
-    <span class="n">r</span><span class="o">.</span><span class="n">colour</span> <span class="o">=</span> <span class="s">&#39;#DAD5E0&#39;</span>
-    <span class="n">r</span><span class="o">.</span><span class="n">grid_colour</span> <span class="o">=</span> <span class="s">&#39;#EFEFEF&#39;</span>
-    <span class="n">chart</span><span class="o">.</span><span class="n">radar_axis</span> <span class="o">=</span> <span class="n">r</span>
-    <span class="n">tip</span> <span class="o">=</span> <span class="n">tooltip</span><span class="p">(</span><span class="n">proximity</span><span class="o">=</span><span class="mf">1</span><span class="p">)</span>
-    <span class="n">chart</span><span class="o">.</span><span class="n">tooltip</span> <span class="o">=</span> <span class="n">tip</span>
-    <span class="n">chart</span><span class="o">.</span><span class="n">bg_colour</span> <span class="o">=</span> <span class="s">&#39;#FFFFFF&#39;</span>
-    <span class="k">return</span> <span class="n">chart</span>
-</pre></div>
+    for i in val1:                                   
+        txt = "#val#<br>Spoke: %s" % i 
+        tmp = dot_value(value=i,  colour='#D41E47', tip=txt)
+        val2.append(tmp)
+    line = line_hollow()
+    line.values = val2
+    line.halo_size = 0
+    line.width = 2
+    line.dot_size = 6
+    line.colour = '#FBB829'
+    line.text = 'Hearts'
+    line.font_size = 10
+    line.loop = True
+    chart.add_element(line)
+    r = radar_axis(max=150)
+    r.step = 10
+    r.colour = '#DAD5E0'
+    r.grid_colour = '#EFEFEF'
+    chart.radar_axis = r
+    tip = tooltip(proximity=1)
+    chart.tooltip = tip
+    chart.bg_colour = '#FFFFFF'
+    return chart    
 </pre> 
 	<div id="json">
 		<p>Data used to generate the chart &mdash; <a href="data/radar_charts_3.json">radar_charts_3.json</a></p>
