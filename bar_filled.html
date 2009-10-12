@@ -38,17 +38,16 @@
 	<div id="chart_bar_filled"></div>
 	<div id="doc"><p>Set the outline colour</p>
 </div>
-	<pre><div class="syntax"><pre><span class="k">def</span> <span class="nf">test_bar_filled</span><span class="p">():</span>
+	<pre>def test_bar_filled():
                                                                                      
-    <span class="n">t</span> <span class="o">=</span> <span class="n">title</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="n">time</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s">&#39;%a %Y %b </span><span class="si">%d</span><span class="s">&#39;</span><span class="p">))</span>
-    <span class="n">b1</span> <span class="o">=</span> <span class="n">bar_filled</span><span class="p">(</span><span class="n">colour</span><span class="o">=</span><span class="s">&#39;#E2D66A&#39;</span><span class="p">)</span>
-    <span class="n">b1</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mf">9</span><span class="p">,</span><span class="mf">0</span><span class="p">,</span><span class="o">-</span><span class="mf">1</span><span class="p">)</span>
-    <span class="n">b1</span><span class="o">.</span><span class="n">outline_colour</span> <span class="o">=</span> <span class="s">&#39;#577261&#39;</span>
-    <span class="n">chart</span> <span class="o">=</span> <span class="n">open_flash_chart</span><span class="p">(</span><span class="n">bg_colour</span><span class="o">=</span><span class="s">&quot;#FFFFFF&quot;</span><span class="p">)</span>
-    <span class="n">chart</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="n">t</span>    
-    <span class="n">chart</span><span class="o">.</span><span class="n">add_element</span><span class="p">(</span><span class="n">b1</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">chart</span>
-</pre></div>
+    t = title(text=time.strftime('%a %Y %b %d'))
+    b1 = bar_filled(colour='#E2D66A')
+    b1.values = range(9,0,-1)
+    b1.outline_colour = '#577261'
+    chart = open_flash_chart(bg_colour="#FFFFFF")
+    chart.title = t    
+    chart.add_element(b1)
+    return chart
 </pre> 
 	<div id="json">
 		<p>Data used to generate the chart &mdash; <a href="data/bar_filled.json">bar_filled.json</a></p>

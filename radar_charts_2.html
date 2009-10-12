@@ -42,50 +42,49 @@ In the above example you can see that the gold line has not had its loop attribu
 
 <p>The default tooltip is of no use with radar charts so we change its behaviour to proximity.</p>
 </div>
-	<pre><div class="syntax"><pre><span class="k">def</span> <span class="nf">test_radar_charts_2</span><span class="p">():</span>
+	<pre>def test_radar_charts_2():
     
-    <span class="n">chart</span> <span class="o">=</span> <span class="n">open_flash_chart</span><span class="p">()</span> 
-    <span class="n">chart</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="n">title</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s">&#39;Radar Chart&#39;</span><span class="p">)</span>
-    <span class="n">line1</span> <span class="o">=</span> <span class="n">line_hollow</span><span class="p">()</span>
-    <span class="n">line1</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="mf">1</span>
-    <span class="n">line1</span><span class="o">.</span><span class="n">dot_size</span> <span class="o">=</span> <span class="mf">3</span>
-    <span class="n">line1</span><span class="o">.</span><span class="n">halo_size</span> <span class="o">=</span> <span class="mf">2</span>
-    <span class="n">line1</span><span class="o">.</span><span class="n">colour</span> <span class="o">=</span> <span class="s">&#39;#FBB829&#39;</span>
-    <span class="n">line1</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="mf">3</span><span class="p">,</span> <span class="mf">4</span><span class="p">,</span> <span class="mf">5</span><span class="p">,</span> <span class="mf">4</span><span class="p">,</span> <span class="mf">3</span><span class="p">,</span> <span class="mf">3</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">]</span>
-    <span class="n">line1</span><span class="o">.</span><span class="n">tip</span> <span class="o">=</span> <span class="s">&quot;Gold #val#&quot;</span>
-    <span class="n">line1</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s">&#39;Mr. Gold&#39;</span>
-    <span class="n">line1</span><span class="o">.</span><span class="n">font_size</span> <span class="o">=</span> <span class="mf">10</span>
-    <span class="n">chart</span><span class="o">.</span><span class="n">add_element</span><span class="p">(</span><span class="n">line1</span><span class="p">)</span>
+    chart = open_flash_chart() 
+    chart.title = title(text='Radar Chart')
+    line1 = line_hollow()
+    line1.width = 1
+    line1.dot_size = 3
+    line1.halo_size = 2
+    line1.colour = '#FBB829'
+    line1.values = [3, 4, 5, 4, 3, 3, 2.5]
+    line1.tip = "Gold #val#"
+    line1.text = 'Mr. Gold'
+    line1.font_size = 10
+    chart.add_element(line1)
     
-    <span class="n">line2</span> <span class="o">=</span> <span class="n">line_dot</span><span class="p">()</span>
-    <span class="n">line2</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="mf">2</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mf">7</span><span class="p">)]</span>
-    <span class="n">line2</span><span class="o">.</span><span class="n">halo_size</span> <span class="o">=</span> <span class="mf">2</span>
-    <span class="n">line2</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="mf">1</span>
-    <span class="n">line2</span><span class="o">.</span><span class="n">dot_size</span> <span class="o">=</span> <span class="mf">3</span>
-    <span class="n">line2</span><span class="o">.</span><span class="n">colour</span> <span class="o">=</span> <span class="s">&#39;#80000FF&#39;</span>
-    <span class="n">line2</span><span class="o">.</span><span class="n">tip</span> <span class="o">=</span> <span class="s">&#39;Purple #val#&#39;</span>
-    <span class="n">line2</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s">&#39;Mr. Purple&#39;</span>
-    <span class="n">line2</span><span class="o">.</span><span class="n">font_size</span> <span class="o">=</span> <span class="mf">10</span>
-    <span class="n">line2</span><span class="o">.</span><span class="n">loop</span> <span class="o">=</span> <span class="bp">True</span>
-    <span class="n">chart</span><span class="o">.</span><span class="n">add_element</span><span class="p">(</span><span class="n">line2</span><span class="p">)</span>
+    line2 = line_dot()
+    line2.values = [2 for i in range(7)]
+    line2.halo_size = 2
+    line2.width = 1
+    line2.dot_size = 3
+    line2.colour = '#80000FF'
+    line2.tip = 'Purple #val#'
+    line2.text = 'Mr. Purple'
+    line2.font_size = 10
+    line2.loop = True
+    chart.add_element(line2)
      
-    <span class="n">r</span> <span class="o">=</span> <span class="n">radar_axis</span><span class="p">(</span><span class="nb">max</span><span class="o">=</span><span class="mf">5</span><span class="p">)</span>
-    <span class="n">r</span><span class="o">.</span><span class="n">colour</span> <span class="o">=</span><span class="s">&#39;#DAD5E0&#39;</span>
-    <span class="n">r</span><span class="o">.</span><span class="n">grid_colour</span> <span class="o">=</span> <span class="s">&#39;#DAD5E0&#39;</span>
-    <span class="n">ra</span> <span class="o">=</span> <span class="n">radar_axis_labels</span><span class="p">(</span><span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;Zero&#39;</span><span class="p">,</span><span class="s">&#39;&#39;</span><span class="p">,</span><span class="s">&#39;&#39;</span><span class="p">,</span><span class="s">&#39;Middle&#39;</span><span class="p">,</span><span class="s">&#39;&#39;</span><span class="p">,</span><span class="s">&#39;High&#39;</span><span class="p">])</span>
-    <span class="n">ra</span><span class="o">.</span><span class="n">colour</span> <span class="o">=</span> <span class="s">&#39;#9F819F&#39;</span>
-    <span class="n">r</span><span class="o">.</span><span class="n">labels</span> <span class="o">=</span> <span class="n">ra</span>
-    <span class="n">sa</span> <span class="o">=</span> <span class="n">radar_spoke_labels</span><span class="p">(</span><span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;Strength&#39;</span><span class="p">,</span> <span class="s">&#39;Smarts&#39;</span><span class="p">,</span> <span class="s">&#39;Sweet&lt;br&gt;Tooth&#39;</span><span class="p">,</span>
-            <span class="s">&#39;Armour&#39;</span><span class="p">,</span> <span class="s">&#39;Max Hit Points&#39;</span><span class="p">,</span> <span class="s">&#39;???&#39;</span><span class="p">,</span> <span class="s">&#39;Looks Like a Monkey&#39;</span><span class="p">])</span>
-    <span class="n">sa</span><span class="o">.</span><span class="n">colour</span> <span class="o">=</span> <span class="s">&#39;#9F819F&#39;</span>
-    <span class="n">chart</span><span class="o">.</span><span class="n">radar_axis</span> <span class="o">=</span> <span class="n">r</span> 
-    <span class="n">r</span><span class="o">.</span><span class="n">spoke_labels</span> <span class="o">=</span> <span class="n">sa</span>
-    <span class="n">tip</span> <span class="o">=</span> <span class="n">tooltip</span><span class="p">()</span>
-    <span class="n">tip</span><span class="o">.</span><span class="n">proximity</span> <span class="o">=</span> <span class="mf">1</span>
-    <span class="n">chart</span><span class="o">.</span><span class="n">tooltip</span> <span class="o">=</span> <span class="n">tip</span>
-    <span class="n">chart</span><span class="o">.</span><span class="n">bg_colour</span> <span class="o">=</span> <span class="s">&#39;#FFFFFF&#39;</span>
-    <span class="k">return</span> <span class="n">chart</span>
-</pre></div>
+    r = radar_axis(max=5)
+    r.colour ='#DAD5E0'
+    r.grid_colour = '#DAD5E0'
+    ra = radar_axis_labels(labels=['Zero','','','Middle','','High'])
+    ra.colour = '#9F819F'
+    r.labels = ra
+    sa = radar_spoke_labels(labels=['Strength', 'Smarts', 'Sweet<br>Tooth',
+            'Armour', 'Max Hit Points', '???', 'Looks Like a Monkey'])
+    sa.colour = '#9F819F'
+    chart.radar_axis = r 
+    r.spoke_labels = sa
+    tip = tooltip()
+    tip.proximity = 1
+    chart.tooltip = tip
+    chart.bg_colour = '#FFFFFF'
+    return chart
 </pre> 
 	<div id="json">
 		<p>Data used to generate the chart &mdash; <a href="data/radar_charts_2.json">radar_charts_2.json</a></p>

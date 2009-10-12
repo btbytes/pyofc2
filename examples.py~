@@ -120,7 +120,7 @@ def test_manylines():
     l1.width = 4
     l1.colour = "#DFC329"
     l1.dot_size = 5
-    l1.values = [random.randint(1,6) for i in  range(9)]
+    l1.values = [2,4,1,3,5,6,8,9,7]
     l1.text = 'Line 1'
     l1.font_size = 10
     
@@ -128,14 +128,14 @@ def test_manylines():
     l2.width = 1
     l2.colour = "#6363ac"
     l2.dot_size = 5
-    l2.values = [random.randint(7,13) for i in  range(9)]  
+    l2.values = [8,7,10,9,11,13,12,9,7,8]  
     l2.text = 'Line 2'
     l2.font_size = 10
     
     l3 = line()
     l3.width = 4;
     l3.colour = "#5E4725"
-    l3.values = [random.randint(14,19) for i in  range(9)]  
+    l3.values = [15,14,19,16,17,18,15,16,14] 
     l3.text = 'Line 3'
     l3.font_size = 10
     
@@ -174,7 +174,7 @@ def test_bar_2():
     b1 = bar()
     b1.values = range(9,0,-1)
     b2 = bar()
-    b2.values = [random.randint(0,9) for i in range(9)]
+    b2.values = [5,4,0,1,7,8,4,2,3,6]
     b2.colour = '#56acde'
     chart = open_flash_chart()
     chart.title = t    
@@ -594,6 +594,9 @@ docs = [
 
     <p>which will compile all the examples and generate HTML files containing charts</p>
     <p>To see the generated charts, run <pre><code>$ ./start.sh </code></pre></p>
+
+    <h3>How to use PyOFC2 with Django</h3>
+    <p>See <a href="http://github.com/btbytes/djofc2_demo/tree/master">this demo Django application</a> code.
     ''' },
     ]
     

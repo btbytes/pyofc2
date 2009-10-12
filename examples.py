@@ -10,7 +10,6 @@ from __future__ import division
 from pyofc2 import *
 import time   
 import math 
-import random
 import inspect  
 import pprint
 from jinja import Environment, FileSystemLoader
@@ -120,7 +119,7 @@ def test_manylines():
     l1.width = 4
     l1.colour = "#DFC329"
     l1.dot_size = 5
-    l1.values = [random.randint(1,6) for i in  range(9)]
+    l1.values = [2,4,1,3,5,6,8,9,7]
     l1.text = 'Line 1'
     l1.font_size = 10
     
@@ -128,14 +127,14 @@ def test_manylines():
     l2.width = 1
     l2.colour = "#6363ac"
     l2.dot_size = 5
-    l2.values = [random.randint(7,13) for i in  range(9)]  
+    l2.values = [8,7,10,9,11,13,12,9,7,8]  
     l2.text = 'Line 2'
     l2.font_size = 10
     
     l3 = line()
     l3.width = 4;
     l3.colour = "#5E4725"
-    l3.values = [random.randint(14,19) for i in  range(9)]  
+    l3.values = [15,14,19,16,17,18,15,16,14] 
     l3.text = 'Line 3'
     l3.font_size = 10
     
@@ -174,7 +173,7 @@ def test_bar_2():
     b1 = bar()
     b1.values = range(9,0,-1)
     b2 = bar()
-    b2.values = [random.randint(0,9) for i in range(9)]
+    b2.values = [5,4,0,1,7,8,4,2,3,6]
     b2.colour = '#56acde'
     chart = open_flash_chart()
     chart.title = t    
@@ -349,15 +348,8 @@ def test_scatter_line_chart():
     x = 0.0
     y = 0
     v = []
-    while(x<25):
-        v.append(scatter_value(x=x,y=y))
-        y = random.randint(-20,20)/10
-        if y > 10: y = 10
-        if y < -10 : y = -10
-        x += random.randint(5, 15)/10
-    s.values = v
+    s.values = [ { "x": 0, "y": 0 }, { "x": 1.2, "y": 0.5 }, { "x": 2.5, "y": -0.9 }, { "x": 3.2, "y": -2.6 }, { "x": 4.6, "y": -2.6 }, { "x": 6, "y": -2.3 }, { "x": 7.5, "y": -0.4 }, { "x": 8.9, "y": 0.2 }, { "x": 10, "y": -1.7 }, { "x": 11, "y": -2.1 }, { "x": 11.6, "y": -3.2 }, { "x": 12.2, "y": -3.1 }, { "x": 13.2, "y": -1.3 }, { "x": 14.5, "y": -3.2 }, { "x": 15.3, "y": -4.3 }, { "x": 15.9, "y": -4.2 }, { "x": 16.5, "y": -5.6 }, { "x": 17.3, "y": -4.4 }, { "x": 18.7, "y": -2.7 }, { "x": 19.6, "y": -2.7 }, { "x": 20.1, "y": -1.7 }, { "x": 21.3, "y": -2.8 }, { "x": 22.7, "y": -4.6 }, { "x": 23.3, "y": -4.3 }, { "x": 24.8, "y": -4.5 } ] 
     chart.add_element(s)
-    
     xa = x_axis()
     xa.min, xa.max = 0,25
     chart.x_axis = xa
@@ -548,7 +540,11 @@ def test_shape():
     t = title(text="Random shape")
     chart.title = t    
     s = shape(colour="#89ad34")
-    s.values = [{'x': random.randint(1,10), 'y': random.randint(1,10)} for i in range(5)]
+    s.values = [{'x': 6, 'y': 5},
+     {'x': 8, 'y': 8},
+     {'x': 6, 'y': 5},
+     {'x': 6, 'y': 9},
+     {'x': 2, 'y': 10}]
     chart.add_element(s)        
     x = x_axis()
     x.offset = False
