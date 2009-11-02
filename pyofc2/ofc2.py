@@ -110,7 +110,7 @@ stardot = lambda **kw: dotfactory(type='star', **kw)
 
 barfactory = ofc_factory('_bar', ['type', 'values', 'alpha', 'color', 'colour', 'key', 'on_click'])
 bar = lambda **kw: barfactory(type='bar',**kw)
-barvalue = ofc_factory('values', ['colour', 'tip', 'top', 'bottom'])
+barvalue = ofc_factory('values', ['colour', 'value', 'tip', 'top', 'bottom'])
 
 barfilledfactory = ofc_factory('_bar', ['type', 'values', 'alpha', 'color',
     'colour', 'key', 'outline_colour', 'outline_color'])
