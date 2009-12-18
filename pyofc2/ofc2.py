@@ -41,7 +41,9 @@ class OFCBase(dict):
         'outline_colour':'outline-colour', 'fill_color':'fill',
         'fill_colour':'fill', 'fill_alpha':'fill-alpha',
         'halo_size':'halo-size', 'halosize':'halo-size',
-        'proximity': 'mouse', 'spoke_labels':'spoke-labels'
+        'proximity': 'mouse', 'spoke_labels':'spoke-labels',
+        'visible_steps': 'visible-steps',
+        'javascript_function': 'javascript-function',
     }
 
     def __setattr__(self, k, w):
@@ -62,9 +64,9 @@ def ofc_init(self, **kw):
 
 
 def ofc_factory(classname, acceptable):
-       klass = type(classname, (OFCBase, ), {'acceptable':acceptable})
-       setattr(klass, '__init__', ofc_init )
-       return klass
+    klass = type(classname, (OFCBase, ), {'acceptable':acceptable})
+    setattr(klass, '__init__', ofc_init )
+    return klass
 
 title = ofc_factory('title', ['text','style'])
 class x_legend(title): pass
@@ -72,7 +74,7 @@ class y_legend(title): pass
 
 labels = ofc_factory('labels', ['labels', 'text'])
 x_axis_label = ofc_factory('x_axis_label', ['text', 'steps', 'color', 'colour', 'size', 'visible', 'rotate' ])
-x_axis_labels = ofc_factory('x_axis_labels', ['labels', 'rotate', 'steps'])
+x_axis_labels = ofc_factory('x_axis_labels', ['labels', 'rotate', 'steps', 'text', 'visible_steps'])
 radar_axis_labels = ofc_factory('radar_axis_labels', ['labels'])
 radar_spoke_labels = ofc_factory('radar_spoke_labels',['labels'])
 shapefactory = ofc_factory('_shape', ['type','colour', 'color', 'values'])
@@ -96,7 +98,7 @@ entry = ofc_factory('values', ['text', 'fontsize', 'colour', 'color'])
 
 linefactory = ofc_factory('_line', ['type','alpha', 'colour','color', 'text',
     'fontsize', 'font_size', 'values', 'halo_size', 'width', 'dot_size', 'on_click', 'tip',
-    'loop', 'dot_style'])
+    'loop', 'dot_style', 'axis'])
 line = lambda **kw: linefactory(type='line',**kw)
 line_dot = lambda **kw: linefactory(type='line_dot', **kw)
 line_hollow = lambda **kw: linefactory(type='line_hollow', **kw)
@@ -108,10 +110,8 @@ dot = lambda **kw: dotfactory(type='solid-dot', **kw)
 hollowdot = lambda **kw: dotfactory(type='hollow-dot', **kw)
 stardot = lambda **kw: dotfactory(type='star', **kw)
 
-barfactory = ofc_factory('_bar', ['type', 'values', 'alpha', 'color', 'colour', 'key', 'on_click'])
+barfactory = ofc_factory('_bar', ['type', 'values', 'alpha', 'color', 'colour', 'key', 'on_click', 'axis'])
 bar = lambda **kw: barfactory(type='bar',**kw)
-
-bar_glassfactory = ofc_factory('_bar', ['type', 'values', 'alpha', 'color', 'colour', 'key', 'on_click'])
 bar_glass = lambda **kw: barfactory(type='bar_glass',**kw)
 
 barvalue = ofc_factory('values', ['colour', 'value', 'tip', 'top', 'bottom'])
@@ -129,7 +129,7 @@ bar_stack = lambda **kw: barstackfactory(type='bar_stack',**kw)
 
 area_linefactory = ofc_factory('_area_line', ['type', 'values', 'color', 'colour',
     'tooltip', 'width', 'dot_size', 'dotsize', 'halo_size', 'halosize' 'key', 'fill_colour',
-    'fill_color', 'fill_alpha', 'loop'])
+    'fill_color', 'fill_alpha', 'loop', 'axis'])
 area_line = lambda **kw: area_linefactory(type='area_line', **kw)
 area_hollow = lambda **kw: area_linefactory(type='area_hollow', **kw)
 
@@ -144,6 +144,9 @@ piefactory = ofc_factory('_pie', ['alpha', 'colour', 'color', 'text',
         'on_click', 'radius', 'type'])
 pie = lambda **kw: piefactory(type='pie', **kw)
 
+menu = ofc_factory('menu', ['colour', 'outline_colour', 'values'])
+menu_value = ofc_factory('menu_item', ['type', 'text', 'javascript_function'])
+
 #TODO: derive open_flash_chart class from OFCBase . use ofc_factory
 class open_flash_chart(OFCBase):
     typetable = {
@@ -155,6 +158,7 @@ class open_flash_chart(OFCBase):
     'y_axis_right': y_axis_right,
     'tooltip' : tooltip,
     'radar_axis': radar_axis,
+    'menu': menu,
     }
 
     def __setattr__(self, k, w):
@@ -169,6 +173,13 @@ class open_flash_chart(OFCBase):
         except:
             self['elements'] = [element]
 
+    def add_menu_value(self, menu_value):
+        self['menu'] = self.get('menu', {})
+        try:
+            self['menu']['values'].append(menu_value)
+        except:
+            self['menu']['values'] = [menu_value]
+            
     def __str__(self):
         return cjson.encode(self)
 
