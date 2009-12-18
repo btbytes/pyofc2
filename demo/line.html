@@ -38,15 +38,16 @@
 	<div id="chart_line"></div>
 	<div id="doc"><p>Simple Line Graph</p>
 </div>
-	<pre>def test_line():      
+	<pre><div class="syntax"><pre><span class="k">def</span> <span class="nf">test_line</span><span class="p">():</span>      
     
-    t = title(text=time.strftime('%a %Y %b %d'))
-    l = line()
-    l.values = [9,8,7,6,5,4,3,2,1]
-    chart = open_flash_chart()
-    chart.title = t
-    chart.add_element(l)
-    return chart 
+    <span class="n">t</span> <span class="o">=</span> <span class="n">title</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="n">time</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s">&#39;%a %Y %b </span><span class="si">%d</span><span class="s">&#39;</span><span class="p">))</span>
+    <span class="n">l</span> <span class="o">=</span> <span class="n">line</span><span class="p">()</span>
+    <span class="n">l</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">chart</span> <span class="o">=</span> <span class="n">open_flash_chart</span><span class="p">()</span>
+    <span class="n">chart</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="n">t</span>
+    <span class="n">chart</span><span class="o">.</span><span class="n">add_element</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">chart</span>
+</pre></div>
 </pre> 
 	<div id="json">
 		<p>Data used to generate the chart &mdash; <a href="data/line.json">line.json</a></p>
@@ -67,6 +68,7 @@
 <dt class="el2">Bar Charts</dt><dd>
 <li><a href="bar.html">Bar Chart</a></li>
 <li><a href="bar_2.html">Bar Chart 2</a></li>
+<li><a href="bar_glass.html">Glass Bar Chart</a></li>
 </dd>
 <dt class="el2">Bar Filled Charts</dt><dd>
 <li><a href="bar_filled.html">Bar Filled Chart</a></li>

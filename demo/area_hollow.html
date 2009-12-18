@@ -40,34 +40,35 @@
 
 <p>See also <a href="area_line.html">Area Line</a></p>
 </div>
-	<pre>def test_area_hollow():
+	<pre><div class="syntax"><pre><span class="k">def</span> <span class="nf">test_area_hollow</span><span class="p">():</span>
                                          
-    t = title(text="Area Hollow Chart")
-    a = area_hollow()
-    a.width = 2
-    a.dot_size = 4
-    a.halo_size = 1
-    a.colour = '#C4B86A'
-    a.fill_colour = '#C4B8AA'
-    a.fill_alpha = 0.7 
-    a.values = scurve()
-    chart = open_flash_chart()
-    chart.title = t
-    chart.add_element(a)
-    y  = y_axis()
-    y.min, y.max, y.steps = -2, 2, 2
-    y.labels = None
-    y.offset = False
+    <span class="n">t</span> <span class="o">=</span> <span class="n">title</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s">&quot;Area Hollow Chart&quot;</span><span class="p">)</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">area_hollow</span><span class="p">()</span>
+    <span class="n">a</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="n">a</span><span class="o">.</span><span class="n">dot_size</span> <span class="o">=</span> <span class="mi">4</span>
+    <span class="n">a</span><span class="o">.</span><span class="n">halo_size</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">a</span><span class="o">.</span><span class="n">colour</span> <span class="o">=</span> <span class="s">&#39;#C4B86A&#39;</span>
+    <span class="n">a</span><span class="o">.</span><span class="n">fill_colour</span> <span class="o">=</span> <span class="s">&#39;#C4B8AA&#39;</span>
+    <span class="n">a</span><span class="o">.</span><span class="n">fill_alpha</span> <span class="o">=</span> <span class="mf">0.7</span> 
+    <span class="n">a</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="n">scurve</span><span class="p">()</span>
+    <span class="n">chart</span> <span class="o">=</span> <span class="n">open_flash_chart</span><span class="p">()</span>
+    <span class="n">chart</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="n">t</span>
+    <span class="n">chart</span><span class="o">.</span><span class="n">add_element</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    <span class="n">y</span>  <span class="o">=</span> <span class="n">y_axis</span><span class="p">()</span>
+    <span class="n">y</span><span class="o">.</span><span class="n">min</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">max</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">steps</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span>
+    <span class="n">y</span><span class="o">.</span><span class="n">labels</span> <span class="o">=</span> <span class="bp">None</span>
+    <span class="n">y</span><span class="o">.</span><span class="n">offset</span> <span class="o">=</span> <span class="bp">False</span>
 
-    x = x_axis()
-    x.labels = scurve()
-    x.steps = 2
-    xlbls = x_axis_labels(steps=4, rotate="vertical")
-    x.labels = xlbls
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x_axis</span><span class="p">()</span>
+    <span class="n">x</span><span class="o">.</span><span class="n">labels</span> <span class="o">=</span> <span class="n">scurve</span><span class="p">()</span>
+    <span class="n">x</span><span class="o">.</span><span class="n">steps</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="n">xlbls</span> <span class="o">=</span> <span class="n">x_axis_labels</span><span class="p">(</span><span class="n">steps</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">rotate</span><span class="o">=</span><span class="s">&quot;vertical&quot;</span><span class="p">)</span>
+    <span class="n">x</span><span class="o">.</span><span class="n">labels</span> <span class="o">=</span> <span class="n">xlbls</span>
 
-    chart.y_axis = y
-    chart.x_axis = x
-    return chart        
+    <span class="n">chart</span><span class="o">.</span><span class="n">y_axis</span> <span class="o">=</span> <span class="n">y</span>
+    <span class="n">chart</span><span class="o">.</span><span class="n">x_axis</span> <span class="o">=</span> <span class="n">x</span>
+    <span class="k">return</span> <span class="n">chart</span>
+</pre></div>
 </pre> 
 	<div id="json">
 		<p>Data used to generate the chart &mdash; <a href="data/area_hollow.json">area_hollow.json</a></p>
@@ -88,6 +89,7 @@
 <dt class="el2">Bar Charts</dt><dd>
 <li><a href="bar.html">Bar Chart</a></li>
 <li><a href="bar_2.html">Bar Chart 2</a></li>
+<li><a href="bar_glass.html">Glass Bar Chart</a></li>
 </dd>
 <dt class="el2">Bar Filled Charts</dt><dd>
 <li><a href="bar_filled.html">Bar Filled Chart</a></li>

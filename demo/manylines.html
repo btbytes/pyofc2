@@ -38,42 +38,43 @@
 	<div id="chart_manylines"></div>
 	<div id="doc"><p>Example of Multiple Line Charts</p>
 </div>
-	<pre>def test_manylines():
+	<pre><div class="syntax"><pre><span class="k">def</span> <span class="nf">test_manylines</span><span class="p">():</span>
            
-    l1 = line_dot()
-    l1.width = 4
-    l1.colour = "#DFC329"
-    l1.dot_size = 5
-    l1.values = [2,4,1,3,5,6,8,9,7]
-    l1.text = 'Line 1'
-    l1.font_size = 10
+    <span class="n">l1</span> <span class="o">=</span> <span class="n">line_dot</span><span class="p">()</span>
+    <span class="n">l1</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="mi">4</span>
+    <span class="n">l1</span><span class="o">.</span><span class="n">colour</span> <span class="o">=</span> <span class="s">&quot;#DFC329&quot;</span>
+    <span class="n">l1</span><span class="o">.</span><span class="n">dot_size</span> <span class="o">=</span> <span class="mi">5</span>
+    <span class="n">l1</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">7</span><span class="p">]</span>
+    <span class="n">l1</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s">&#39;Line 1&#39;</span>
+    <span class="n">l1</span><span class="o">.</span><span class="n">font_size</span> <span class="o">=</span> <span class="mi">10</span>
     
-    l2 = line_hollow()
-    l2.width = 1
-    l2.colour = "#6363ac"
-    l2.dot_size = 5
-    l2.values = [8,7,10,9,11,13,12,9,7,8]  
-    l2.text = 'Line 2'
-    l2.font_size = 10
+    <span class="n">l2</span> <span class="o">=</span> <span class="n">line_hollow</span><span class="p">()</span>
+    <span class="n">l2</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">l2</span><span class="o">.</span><span class="n">colour</span> <span class="o">=</span> <span class="s">&quot;#6363ac&quot;</span>
+    <span class="n">l2</span><span class="o">.</span><span class="n">dot_size</span> <span class="o">=</span> <span class="mi">5</span>
+    <span class="n">l2</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">]</span>  
+    <span class="n">l2</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s">&#39;Line 2&#39;</span>
+    <span class="n">l2</span><span class="o">.</span><span class="n">font_size</span> <span class="o">=</span> <span class="mi">10</span>
     
-    l3 = line()
-    l3.width = 4;
-    l3.colour = "#5E4725"
-    l3.values = [15,14,19,16,17,18,15,16,14] 
-    l3.text = 'Line 3'
-    l3.font_size = 10
+    <span class="n">l3</span> <span class="o">=</span> <span class="n">line</span><span class="p">()</span>
+    <span class="n">l3</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+    <span class="n">l3</span><span class="o">.</span><span class="n">colour</span> <span class="o">=</span> <span class="s">&quot;#5E4725&quot;</span>
+    <span class="n">l3</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="mi">15</span><span class="p">,</span><span class="mi">14</span><span class="p">,</span><span class="mi">19</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span><span class="mi">17</span><span class="p">,</span><span class="mi">18</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span><span class="mi">14</span><span class="p">]</span> 
+    <span class="n">l3</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="s">&#39;Line 3&#39;</span>
+    <span class="n">l3</span><span class="o">.</span><span class="n">font_size</span> <span class="o">=</span> <span class="mi">10</span>
     
-    y = y_axis()
-    y.min, y.max, y.steps = 0, 20, 5
+    <span class="n">y</span> <span class="o">=</span> <span class="n">y_axis</span><span class="p">()</span>
+    <span class="n">y</span><span class="o">.</span><span class="n">min</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">max</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">steps</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">5</span>
     
-    t = title(text='Three lines example') 
-    chart = open_flash_chart()
-    chart.title = t
-    chart.add_element(l1)
-    chart.add_element(l2)    
-    chart.add_element(l3)
-    chart.y_axis = y
-    return chart       
+    <span class="n">t</span> <span class="o">=</span> <span class="n">title</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s">&#39;Three lines example&#39;</span><span class="p">)</span> 
+    <span class="n">chart</span> <span class="o">=</span> <span class="n">open_flash_chart</span><span class="p">()</span>
+    <span class="n">chart</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="n">t</span>
+    <span class="n">chart</span><span class="o">.</span><span class="n">add_element</span><span class="p">(</span><span class="n">l1</span><span class="p">)</span>
+    <span class="n">chart</span><span class="o">.</span><span class="n">add_element</span><span class="p">(</span><span class="n">l2</span><span class="p">)</span>    
+    <span class="n">chart</span><span class="o">.</span><span class="n">add_element</span><span class="p">(</span><span class="n">l3</span><span class="p">)</span>
+    <span class="n">chart</span><span class="o">.</span><span class="n">y_axis</span> <span class="o">=</span> <span class="n">y</span>
+    <span class="k">return</span> <span class="n">chart</span>
+</pre></div>
 </pre> 
 	<div id="json">
 		<p>Data used to generate the chart &mdash; <a href="data/manylines.json">manylines.json</a></p>
@@ -94,6 +95,7 @@
 <dt class="el2">Bar Charts</dt><dd>
 <li><a href="bar.html">Bar Chart</a></li>
 <li><a href="bar_2.html">Bar Chart 2</a></li>
+<li><a href="bar_glass.html">Glass Bar Chart</a></li>
 </dd>
 <dt class="el2">Bar Filled Charts</dt><dd>
 <li><a href="bar_filled.html">Bar Filled Chart</a></li>

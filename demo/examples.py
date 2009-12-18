@@ -181,6 +181,18 @@ def test_bar_2():
     chart.add_element(b2)
     return chart
     
+def test_bar_glass():
+    '''
+    Bar Charts/Glass Bar Chart
+    Make a glass bar chart.  
+    '''                                                                                 
+    t = title(text=time.strftime('%a %Y %b %d'))
+    b = bar_glass()
+    b.values = range(9,0,-1)
+    chart = open_flash_chart()
+    chart.title = t
+    chart.add_element(b)
+    return chart
 
 def test_bar_filled():
     '''
@@ -195,6 +207,7 @@ def test_bar_filled():
     chart.title = t    
     chart.add_element(b1)
     return chart
+
 
 def test_horizontal_bar():
     '''

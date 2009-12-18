@@ -38,37 +38,38 @@
 	<div id="chart_line_dot"></div>
 	<div id="doc"><p>Example of Dotted Line Chart</p>
 </div>
-	<pre>def test_line_dot():
+	<pre><div class="syntax"><pre><span class="k">def</span> <span class="nf">test_line_dot</span><span class="p">():</span>
     
-    t = title(text=time.strftime('%a %Y %b %d'))     
-    l1 = line_dot()
-    l1.values = map(lambda x: math.sin(x)*1.9 + 7, frange(0,6.2, 0.2))
-    l1.halo_size = 0
-    l1.width = 2
-    l1.dot_size = 4
+    <span class="n">t</span> <span class="o">=</span> <span class="n">title</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="n">time</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s">&#39;%a %Y %b </span><span class="si">%d</span><span class="s">&#39;</span><span class="p">))</span>     
+    <span class="n">l1</span> <span class="o">=</span> <span class="n">line_dot</span><span class="p">()</span>
+    <span class="n">l1</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="mf">1.9</span> <span class="o">+</span> <span class="mi">7</span><span class="p">,</span> <span class="n">frange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">6.2</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">))</span>
+    <span class="n">l1</span><span class="o">.</span><span class="n">halo_size</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">l1</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="n">l1</span><span class="o">.</span><span class="n">dot_size</span> <span class="o">=</span> <span class="mi">4</span>
     
-    l2 = line_dot()
-    l2.values = map(lambda x: math.sin(x)*1.9 + 10, frange(0,6.2, 0.2))
-    l2.halo_size = 1
-    l2.width = 1
-    l2.dot_size = 4
+    <span class="n">l2</span> <span class="o">=</span> <span class="n">line_dot</span><span class="p">()</span>
+    <span class="n">l2</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="mf">1.9</span> <span class="o">+</span> <span class="mi">10</span><span class="p">,</span> <span class="n">frange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">6.2</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">))</span>
+    <span class="n">l2</span><span class="o">.</span><span class="n">halo_size</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">l2</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">l2</span><span class="o">.</span><span class="n">dot_size</span> <span class="o">=</span> <span class="mi">4</span>
     
-    l3 = line_dot()
-    l3.values = map(lambda x: math.sin(x)*1.9 + 4, frange(0,6.2, 0.2))
-    l3.halo_size = 1
-    l3.width = 6
-    l3.dot_size = 4
+    <span class="n">l3</span> <span class="o">=</span> <span class="n">line_dot</span><span class="p">()</span>
+    <span class="n">l3</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="mf">1.9</span> <span class="o">+</span> <span class="mi">4</span><span class="p">,</span> <span class="n">frange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">6.2</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">))</span>
+    <span class="n">l3</span><span class="o">.</span><span class="n">halo_size</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">l3</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="mi">6</span>
+    <span class="n">l3</span><span class="o">.</span><span class="n">dot_size</span> <span class="o">=</span> <span class="mi">4</span>
                    
-    y = y_axis()
-    y.min, y.max, y.steps = 0, 15, 5
+    <span class="n">y</span> <span class="o">=</span> <span class="n">y_axis</span><span class="p">()</span>
+    <span class="n">y</span><span class="o">.</span><span class="n">min</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">max</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">steps</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">5</span>
     
-    chart = open_flash_chart()
-    chart.title = t
-    chart.add_element(l1)
-    chart.add_element(l2)    
-    chart.add_element(l3)
-    chart.y_axis = y
-    return chart 
+    <span class="n">chart</span> <span class="o">=</span> <span class="n">open_flash_chart</span><span class="p">()</span>
+    <span class="n">chart</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="n">t</span>
+    <span class="n">chart</span><span class="o">.</span><span class="n">add_element</span><span class="p">(</span><span class="n">l1</span><span class="p">)</span>
+    <span class="n">chart</span><span class="o">.</span><span class="n">add_element</span><span class="p">(</span><span class="n">l2</span><span class="p">)</span>    
+    <span class="n">chart</span><span class="o">.</span><span class="n">add_element</span><span class="p">(</span><span class="n">l3</span><span class="p">)</span>
+    <span class="n">chart</span><span class="o">.</span><span class="n">y_axis</span> <span class="o">=</span> <span class="n">y</span>
+    <span class="k">return</span> <span class="n">chart</span>
+</pre></div>
 </pre> 
 	<div id="json">
 		<p>Data used to generate the chart &mdash; <a href="data/line_dot.json">line_dot.json</a></p>
@@ -89,6 +90,7 @@
 <dt class="el2">Bar Charts</dt><dd>
 <li><a href="bar.html">Bar Chart</a></li>
 <li><a href="bar_2.html">Bar Chart 2</a></li>
+<li><a href="bar_glass.html">Glass Bar Chart</a></li>
 </dd>
 <dt class="el2">Bar Filled Charts</dt><dd>
 <li><a href="bar_filled.html">Bar Filled Chart</a></li>
