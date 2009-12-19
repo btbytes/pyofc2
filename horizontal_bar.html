@@ -38,30 +38,29 @@
 	<div id="chart_horizontal_bar"></div>
 	<div id="doc"><p>Make a horizontal bar chart</p>
 </div>
-	<pre><div class="syntax"><pre><span class="k">def</span> <span class="nf">test_horizontal_bar</span><span class="p">():</span>
+	<pre>def test_horizontal_bar():
                             
-    <span class="n">t</span> <span class="o">=</span> <span class="n">title</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s">&quot;Our New House Schedule&quot;</span><span class="p">)</span>
-    <span class="n">hb</span> <span class="o">=</span> <span class="n">hbar</span><span class="p">(</span><span class="n">colour</span><span class="o">=</span><span class="s">&quot;#86BBEF&quot;</span><span class="p">)</span>
-    <span class="n">hb</span><span class="o">.</span><span class="n">tooltip</span> <span class="o">=</span> <span class="p">(</span><span class="s">&quot;Months: #val#&quot;</span><span class="p">)</span>
-    <span class="n">values</span> <span class="o">=</span> <span class="p">[</span> <span class="n">hbar_value</span><span class="p">(</span><span class="n">left</span><span class="o">=</span><span class="mf">0</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="mf">4</span><span class="p">),</span> 
-        <span class="n">hbar_value</span><span class="p">(</span><span class="n">left</span><span class="o">=</span><span class="mf">4</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="mf">8</span><span class="p">)]</span>
-    <span class="n">h3</span> <span class="o">=</span> <span class="n">hbar_value</span><span class="p">(</span><span class="n">left</span><span class="o">=</span><span class="mf">8</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="mf">11</span><span class="p">)</span>
-    <span class="n">h3</span><span class="o">.</span><span class="n">tip</span> <span class="o">=</span> <span class="s">&quot;#left# to #right#&lt;br&gt;</span><span class="si">%s</span><span class="s"> to </span><span class="si">%s</span><span class="s"> (#val# months)&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">months</span><span class="p">[</span><span class="mf">8</span><span class="p">],</span> <span class="n">months</span><span class="p">[</span><span class="mf">11</span><span class="p">])</span> 
-    <span class="n">values</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">h3</span><span class="p">)</span>
-    <span class="n">hb</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="n">values</span>
-    <span class="n">chart</span> <span class="o">=</span> <span class="n">open_flash_chart</span><span class="p">()</span>
-    <span class="n">chart</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="n">t</span>    
-    <span class="n">chart</span><span class="o">.</span><span class="n">add_element</span><span class="p">(</span><span class="n">hb</span><span class="p">)</span>    
-    <span class="n">x</span> <span class="o">=</span> <span class="n">x_axis</span><span class="p">()</span>
-    <span class="n">x</span><span class="o">.</span><span class="n">offset</span> <span class="o">=</span> <span class="bp">False</span>
-    <span class="n">x</span><span class="o">.</span><span class="n">labels</span> <span class="o">=</span> <span class="n">labels</span><span class="p">(</span><span class="n">labels</span><span class="o">=</span><span class="n">months</span><span class="p">)</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="n">y_axis</span><span class="p">()</span>
-    <span class="n">y</span><span class="o">.</span><span class="n">offset</span> <span class="o">=</span> <span class="mf">1</span>
-    <span class="n">y</span><span class="o">.</span><span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;Make garden look sexy&quot;</span><span class="p">,</span><span class="s">&quot;Paint house&quot;</span><span class="p">,</span><span class="s">&quot;Move into house&quot;</span><span class="p">]</span>
-    <span class="n">chart</span><span class="o">.</span><span class="n">x_axis</span> <span class="o">=</span> <span class="n">x</span>
-    <span class="n">chart</span><span class="o">.</span><span class="n">y_axis</span> <span class="o">=</span> <span class="n">y</span>
-    <span class="k">return</span> <span class="n">chart</span>
-</pre></div>
+    t = title(text="Our New House Schedule")
+    hb = hbar(colour="#86BBEF")
+    hb.tooltip = ("Months: #val#")
+    values = [ hbar_value(left=0, right=4), 
+        hbar_value(left=4, right=8)]
+    h3 = hbar_value(left=8, right=11)
+    h3.tip = "#left# to #right#<br>%s to %s (#val# months)" % (months[8], months[11]) 
+    values.append(h3)
+    hb.values = values
+    chart = open_flash_chart()
+    chart.title = t    
+    chart.add_element(hb)    
+    x = x_axis()
+    x.offset = False
+    x.labels = labels(labels=months)
+    y = y_axis()
+    y.offset = 1
+    y.labels = ["Make garden look sexy","Paint house","Move into house"]
+    chart.x_axis = x
+    chart.y_axis = y
+    return chart
 </pre> 
 	<div id="json">
 		<p>Data used to generate the chart &mdash; <a href="data/horizontal_bar.json">horizontal_bar.json</a></p>

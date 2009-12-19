@@ -39,16 +39,15 @@
 	<div id="doc"><p>Make a Bar Chart
 To add more than one set of bars to a bar chart, see <a href="bar_2.html">Bar Chart 2</a></p>
 </div>
-	<pre><div class="syntax"><pre><span class="k">def</span> <span class="nf">test_bar</span><span class="p">():</span>
+	<pre>def test_bar():
                                                                                      
-    <span class="n">t</span> <span class="o">=</span> <span class="n">title</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="n">time</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s">&#39;%a %Y %b </span><span class="si">%d</span><span class="s">&#39;</span><span class="p">))</span>
-    <span class="n">b</span> <span class="o">=</span> <span class="n">bar</span><span class="p">()</span>
-    <span class="n">b</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mf">9</span><span class="p">,</span><span class="mf">0</span><span class="p">,</span><span class="o">-</span><span class="mf">1</span><span class="p">)</span>
-    <span class="n">chart</span> <span class="o">=</span> <span class="n">open_flash_chart</span><span class="p">()</span>
-    <span class="n">chart</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="n">t</span>
-    <span class="n">chart</span><span class="o">.</span><span class="n">add_element</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">chart</span>
-</pre></div>
+    t = title(text=time.strftime('%a %Y %b %d'))
+    b = bar()
+    b.values = range(9,0,-1)
+    chart = open_flash_chart()
+    chart.title = t
+    chart.add_element(b)
+    return chart
 </pre> 
 	<div id="json">
 		<p>Data used to generate the chart &mdash; <a href="data/bar.json">bar.json</a></p>

@@ -38,33 +38,32 @@
 	<div id="chart_radar_charts_1"></div>
 	<div id="doc"><p>Radar Chart with filled area and value labels.</p>
 </div>
-	<pre><div class="syntax"><pre><span class="k">def</span> <span class="nf">test_radar_charts_1</span><span class="p">():</span>
+	<pre>def test_radar_charts_1():
                                                
-    <span class="n">chart</span> <span class="o">=</span> <span class="n">open_flash_chart</span><span class="p">()</span> 
-    <span class="n">chart</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="n">title</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s">&#39;Radar Chart&#39;</span><span class="p">)</span>
-    <span class="n">area</span> <span class="o">=</span> <span class="n">area_hollow</span><span class="p">()</span>
-    <span class="n">area</span><span class="o">.</span><span class="n">width</span> <span class="o">=</span> <span class="mf">1</span>
-    <span class="n">area</span><span class="o">.</span><span class="n">dot_size</span> <span class="o">=</span> <span class="mf">1</span>
-    <span class="n">area</span><span class="o">.</span><span class="n">halo_size</span> <span class="o">=</span> <span class="mf">1</span>
-    <span class="n">area</span><span class="o">.</span><span class="n">colour</span> <span class="o">=</span> <span class="s">&#39;#45909F&#39;</span>
-    <span class="n">area</span><span class="o">.</span><span class="n">fill_colour</span> <span class="o">=</span> <span class="s">&#39;#45909F&#39;</span>
-    <span class="n">area</span><span class="o">.</span><span class="n">fill_alpha</span> <span class="o">=</span> <span class="mf">0.4</span>
-    <span class="n">area</span><span class="o">.</span><span class="n">loop</span> <span class="o">=</span> <span class="bp">True</span>
-    <span class="n">area</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="mf">3</span><span class="p">,</span> <span class="mf">4</span><span class="p">,</span> <span class="mf">5</span><span class="p">,</span> <span class="mf">4</span><span class="p">,</span> <span class="mf">3</span><span class="p">,</span> <span class="mf">3</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">]</span>
-    <span class="n">chart</span><span class="o">.</span><span class="n">add_element</span><span class="p">(</span><span class="n">area</span><span class="p">)</span> 
-    <span class="n">r</span> <span class="o">=</span> <span class="n">radar_axis</span><span class="p">(</span><span class="nb">max</span><span class="o">=</span><span class="mf">5</span><span class="p">)</span>
-    <span class="n">r</span><span class="o">.</span><span class="n">colour</span> <span class="o">=</span><span class="s">&#39;#EFD1EF&#39;</span>
-    <span class="n">r</span><span class="o">.</span><span class="n">grid_colour</span> <span class="o">=</span> <span class="s">&#39;#EFD1EF&#39;</span>
-    <span class="n">ra</span> <span class="o">=</span> <span class="n">radar_axis_labels</span><span class="p">(</span><span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;0&#39;</span><span class="p">,</span><span class="s">&#39;1&#39;</span><span class="p">,</span><span class="s">&#39;2&#39;</span><span class="p">,</span><span class="s">&#39;3&#39;</span><span class="p">,</span><span class="s">&#39;4&#39;</span><span class="p">,</span><span class="s">&#39;5&#39;</span><span class="p">])</span>
-    <span class="n">ra</span><span class="o">.</span><span class="n">colour</span> <span class="o">=</span> <span class="s">&#39;#9F819F&#39;</span>
-    <span class="n">r</span><span class="o">.</span><span class="n">labels</span> <span class="o">=</span> <span class="n">ra</span>
-    <span class="n">chart</span><span class="o">.</span><span class="n">radar_axis</span> <span class="o">=</span> <span class="n">r</span>
-    <span class="n">tip</span> <span class="o">=</span> <span class="n">tooltip</span><span class="p">()</span>
-    <span class="n">tip</span><span class="o">.</span><span class="n">proximity</span> <span class="o">=</span> <span class="mf">1</span>
-    <span class="n">chart</span><span class="o">.</span><span class="n">tooltip</span> <span class="o">=</span> <span class="n">tip</span>
-    <span class="n">chart</span><span class="o">.</span><span class="n">bg_colour</span> <span class="o">=</span> <span class="s">&#39;#DFFFEC&#39;</span>
-    <span class="k">return</span> <span class="n">chart</span>
-</pre></div>
+    chart = open_flash_chart() 
+    chart.title = title(text='Radar Chart')
+    area = area_hollow()
+    area.width = 1
+    area.dot_size = 1
+    area.halo_size = 1
+    area.colour = '#45909F'
+    area.fill_colour = '#45909F'
+    area.fill_alpha = 0.4
+    area.loop = True
+    area.values = [3, 4, 5, 4, 3, 3, 2.5]
+    chart.add_element(area) 
+    r = radar_axis(max=5)
+    r.colour ='#EFD1EF'
+    r.grid_colour = '#EFD1EF'
+    ra = radar_axis_labels(labels=['0','1','2','3','4','5'])
+    ra.colour = '#9F819F'
+    r.labels = ra
+    chart.radar_axis = r
+    tip = tooltip()
+    tip.proximity = 1
+    chart.tooltip = tip
+    chart.bg_colour = '#DFFFEC'
+    return chart    
 </pre> 
 	<div id="json">
 		<p>Data used to generate the chart &mdash; <a href="data/radar_charts_1.json">radar_charts_1.json</a></p>
