@@ -41,23 +41,24 @@
 <p><em>Note:</em> The above plot should look circular but looks elliptical instead
 because the y-axis is scaled w.r.t x-axis (780:300).</p>
 </div>
-	<pre>def test_scatter_chart():
+	<pre><div class="syntax"><pre><span class="k">def</span> <span class="nf">test_scatter_chart</span><span class="p">():</span>
                      
-    chart = open_flash_chart()
-    chart.title = title(text='Scatter Chart')
-    s1 = scatter(colour="#FFD600", dot_size=10)
-    s1.values = [scatter_value(x=0, y=0)]
-    chart.add_element(s1)
-    s2 = scatter(colour="#D600FF", dot_size=3)
-    s2.values = scircle()
-    chart.add_element(s2)
-    x = x_axis()
-    y = y_axis()
-    x.min, x.max, x.steps = -2, 2, 1
-    y.min, y.max, y.steps = -2, 2, 1
-    chart.x_axis = x
-    chart.y_axis = y
-    return chart
+    <span class="n">chart</span> <span class="o">=</span> <span class="n">open_flash_chart</span><span class="p">()</span>
+    <span class="n">chart</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="n">title</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s">&#39;Scatter Chart&#39;</span><span class="p">)</span>
+    <span class="n">s1</span> <span class="o">=</span> <span class="n">scatter</span><span class="p">(</span><span class="n">colour</span><span class="o">=</span><span class="s">&quot;#FFD600&quot;</span><span class="p">,</span> <span class="n">dot_size</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+    <span class="n">s1</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="n">scatter_value</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">)]</span>
+    <span class="n">chart</span><span class="o">.</span><span class="n">add_element</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span>
+    <span class="n">s2</span> <span class="o">=</span> <span class="n">scatter</span><span class="p">(</span><span class="n">colour</span><span class="o">=</span><span class="s">&quot;#D600FF&quot;</span><span class="p">,</span> <span class="n">dot_size</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+    <span class="n">s2</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="n">scircle</span><span class="p">()</span>
+    <span class="n">chart</span><span class="o">.</span><span class="n">add_element</span><span class="p">(</span><span class="n">s2</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x_axis</span><span class="p">()</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">y_axis</span><span class="p">()</span>
+    <span class="n">x</span><span class="o">.</span><span class="n">min</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">max</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">steps</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span>
+    <span class="n">y</span><span class="o">.</span><span class="n">min</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">max</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">steps</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span>
+    <span class="n">chart</span><span class="o">.</span><span class="n">x_axis</span> <span class="o">=</span> <span class="n">x</span>
+    <span class="n">chart</span><span class="o">.</span><span class="n">y_axis</span> <span class="o">=</span> <span class="n">y</span>
+    <span class="k">return</span> <span class="n">chart</span>
+</pre></div>
 </pre> 
 	<div id="json">
 		<p>Data used to generate the chart &mdash; <a href="data/scatter_chart.json">scatter_chart.json</a></p>
@@ -78,6 +79,7 @@ because the y-axis is scaled w.r.t x-axis (780:300).</p>
 <dt class="el2">Bar Charts</dt><dd>
 <li><a href="bar.html">Bar Chart</a></li>
 <li><a href="bar_2.html">Bar Chart 2</a></li>
+<li><a href="bar_glass.html">Glass Bar Chart</a></li>
 </dd>
 <dt class="el2">Bar Filled Charts</dt><dd>
 <li><a href="bar_filled.html">Bar Filled Chart</a></li>

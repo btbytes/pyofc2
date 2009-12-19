@@ -38,19 +38,20 @@
 	<div id="chart_bar_2"></div>
 	<div id="doc"><p>Add more than one bar to the chart</p>
 </div>
-	<pre>def test_bar_2():
+	<pre><div class="syntax"><pre><span class="k">def</span> <span class="nf">test_bar_2</span><span class="p">():</span>
                                                                                      
-    t = title(text=time.strftime('%a %Y %b %d'))
-    b1 = bar()
-    b1.values = range(9,0,-1)
-    b2 = bar()
-    b2.values = [5,4,0,1,7,8,4,2,3,6]
-    b2.colour = '#56acde'
-    chart = open_flash_chart()
-    chart.title = t    
-    chart.add_element(b1)
-    chart.add_element(b2)
-    return chart
+    <span class="n">t</span> <span class="o">=</span> <span class="n">title</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="n">time</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s">&#39;%a %Y %b </span><span class="si">%d</span><span class="s">&#39;</span><span class="p">))</span>
+    <span class="n">b1</span> <span class="o">=</span> <span class="n">bar</span><span class="p">()</span>
+    <span class="n">b1</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">b2</span> <span class="o">=</span> <span class="n">bar</span><span class="p">()</span>
+    <span class="n">b2</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>
+    <span class="n">b2</span><span class="o">.</span><span class="n">colour</span> <span class="o">=</span> <span class="s">&#39;#56acde&#39;</span>
+    <span class="n">chart</span> <span class="o">=</span> <span class="n">open_flash_chart</span><span class="p">()</span>
+    <span class="n">chart</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="n">t</span>    
+    <span class="n">chart</span><span class="o">.</span><span class="n">add_element</span><span class="p">(</span><span class="n">b1</span><span class="p">)</span>
+    <span class="n">chart</span><span class="o">.</span><span class="n">add_element</span><span class="p">(</span><span class="n">b2</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">chart</span>
+</pre></div>
 </pre> 
 	<div id="json">
 		<p>Data used to generate the chart &mdash; <a href="data/bar_2.json">bar_2.json</a></p>
@@ -71,6 +72,7 @@
 <dt class="el2">Bar Charts</dt><dd>
 <li><a href="bar.html">Bar Chart</a></li>
 <li><a href="bar_2.html">Bar Chart 2</a></li>
+<li><a href="bar_glass.html">Glass Bar Chart</a></li>
 </dd>
 <dt class="el2">Bar Filled Charts</dt><dd>
 <li><a href="bar_filled.html">Bar Filled Chart</a></li>

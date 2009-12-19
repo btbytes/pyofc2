@@ -38,23 +38,24 @@
 	<div id="chart_shape"></div>
 	<div id="doc"><p>Add Shapes to charts.</p>
 </div>
-	<pre>def test_shape():
+	<pre><div class="syntax"><pre><span class="k">def</span> <span class="nf">test_shape</span><span class="p">():</span>
                       
-    chart = open_flash_chart()
-    t = title(text="Random shape")
-    chart.title = t    
-    s = shape(colour="#89ad34")
-    s.values = [{'x': 6, 'y': 5},
-     {'x': 8, 'y': 8},
-     {'x': 6, 'y': 5},
-     {'x': 6, 'y': 9},
-     {'x': 2, 'y': 10}]
-    chart.add_element(s)        
-    x = x_axis()
-    x.offset = False
-    x.labels = labels(labels=months)
-    chart.x_axis = x                                                         
-    return chart
+    <span class="n">chart</span> <span class="o">=</span> <span class="n">open_flash_chart</span><span class="p">()</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">title</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s">&quot;Random shape&quot;</span><span class="p">)</span>
+    <span class="n">chart</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="n">t</span>    
+    <span class="n">s</span> <span class="o">=</span> <span class="n">shape</span><span class="p">(</span><span class="n">colour</span><span class="o">=</span><span class="s">&quot;#89ad34&quot;</span><span class="p">)</span>
+    <span class="n">s</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="p">[{</span><span class="s">&#39;x&#39;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span> <span class="s">&#39;y&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">},</span>
+     <span class="p">{</span><span class="s">&#39;x&#39;</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span> <span class="s">&#39;y&#39;</span><span class="p">:</span> <span class="mi">8</span><span class="p">},</span>
+     <span class="p">{</span><span class="s">&#39;x&#39;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span> <span class="s">&#39;y&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">},</span>
+     <span class="p">{</span><span class="s">&#39;x&#39;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span> <span class="s">&#39;y&#39;</span><span class="p">:</span> <span class="mi">9</span><span class="p">},</span>
+     <span class="p">{</span><span class="s">&#39;x&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s">&#39;y&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">}]</span>
+    <span class="n">chart</span><span class="o">.</span><span class="n">add_element</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>        
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x_axis</span><span class="p">()</span>
+    <span class="n">x</span><span class="o">.</span><span class="n">offset</span> <span class="o">=</span> <span class="bp">False</span>
+    <span class="n">x</span><span class="o">.</span><span class="n">labels</span> <span class="o">=</span> <span class="n">labels</span><span class="p">(</span><span class="n">labels</span><span class="o">=</span><span class="n">months</span><span class="p">)</span>
+    <span class="n">chart</span><span class="o">.</span><span class="n">x_axis</span> <span class="o">=</span> <span class="n">x</span>                                                         
+    <span class="k">return</span> <span class="n">chart</span>
+</pre></div>
 </pre> 
 	<div id="json">
 		<p>Data used to generate the chart &mdash; <a href="data/shape.json">shape.json</a></p>
@@ -75,6 +76,7 @@
 <dt class="el2">Bar Charts</dt><dd>
 <li><a href="bar.html">Bar Chart</a></li>
 <li><a href="bar_2.html">Bar Chart 2</a></li>
+<li><a href="bar_glass.html">Glass Bar Chart</a></li>
 </dd>
 <dt class="el2">Bar Filled Charts</dt><dd>
 <li><a href="bar_filled.html">Bar Filled Chart</a></li>

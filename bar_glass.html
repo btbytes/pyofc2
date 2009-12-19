@@ -3,14 +3,24 @@
 <html>
 	<head>
 		<title>
-			Python Open Flash Chart (pyOFC2) &mdash;  Home 
+			Python Open Flash Chart (pyOFC2) &mdash;  Glass Bar Chart 
 		</title>
 		<meta name="author" content="Pradeep Kishore Gowda">
 
 		<link rel="stylesheet" href="css/reset-fonts-grids.css" type="text/css">
 		<link rel="stylesheet" href="css/style.css" type="text/css"> 
-		 		
-		  
+		<link rel="stylesheet" href="css/pygments.css" type="text/css"> 		
+				
+	<script type="text/javascript" src="js/swfobject.js">
+	</script>
+	<script type="text/javascript">
+		swfobject.embedSWF(
+			"open-flash-chart.swf", "chart_bar_glass", "780", "300",
+			"9.0.0", "expressInstall.swf",
+			{"data-file":"data/bar_glass.json"}
+		);
+	</script>
+
 	</head>
 	<body>
 		<div id="doc2" class="yui-t2">
@@ -24,25 +34,24 @@
 					<div class="yui-b">
 						<div class="yui-g">
 							
-	
-    <p>pyOFC2 is a python library for <a href="http://teethgrinder.co.uk/open-flash-chart-2/">Open Flash Chart</a> 
-    </p>
-
-    <h3>Download and Install</h3> 
-    <p>The source is available at <a href="http://github.com/btbytes/pyofc2">http://github.com/btbytes/pyofc2</a>. <br/>Use the <img src="http://assets2.github.com/images/modules/repos/download_button.png" /> button or use <code>git</code>
-    <br/>
-    <pre><code> $git clone git://github.com/btbytes/pyofc2.git </code></pre>   
-    </p>
-    <h3>Sample code</h3>
-    <p> The <code>demo</code> directory has a examples.py file which illustrates how to use all the charts available in PyOFC2</p>
-    <p> The see the examples, run <pre><code>$ python examples.py</code></pre></p>
-
-    <p>which will compile all the examples and generate HTML files containing charts</p>
-    <p>To see the generated charts, run <pre><code>$ ./start.sh </code></pre></p>
-
-    <h3>How to use PyOFC2 with Django</h3>
-    <p>See <a href="http://github.com/btbytes/djofc2_demo/tree/master">this demo Django application</a> code.
-    
+	<h2>Glass Bar Chart</h2>
+	<div id="chart_bar_glass"></div>
+	<div id="doc"><p>Make a glass bar chart.</p>
+</div>
+	<pre><div class="syntax"><pre><span class="k">def</span> <span class="nf">test_bar_glass</span><span class="p">():</span>
+                                                                                     
+    <span class="n">t</span> <span class="o">=</span> <span class="n">title</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="n">time</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s">&#39;%a %Y %b </span><span class="si">%d</span><span class="s">&#39;</span><span class="p">))</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">bar_glass</span><span class="p">()</span>
+    <span class="n">b</span><span class="o">.</span><span class="n">values</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">chart</span> <span class="o">=</span> <span class="n">open_flash_chart</span><span class="p">()</span>
+    <span class="n">chart</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="n">t</span>
+    <span class="n">chart</span><span class="o">.</span><span class="n">add_element</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">chart</span>
+</pre></div>
+</pre> 
+	<div id="json">
+		<p>Data used to generate the chart &mdash; <a href="data/bar_glass.json">bar_glass.json</a></p>
+	</div>
 
 							
 						</div>
