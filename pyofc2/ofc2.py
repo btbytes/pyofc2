@@ -27,7 +27,7 @@ FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 OTHER DEALINGS IN THE SOFTWARE.
 """
 
-import cjson
+import anyjson
 
 class OFCBase(dict):
     type = None
@@ -110,7 +110,7 @@ dot = lambda **kw: dotfactory(type='solid-dot', **kw)
 hollowdot = lambda **kw: dotfactory(type='hollow-dot', **kw)
 stardot = lambda **kw: dotfactory(type='star', **kw)
 
-barfactory = ofc_factory('_bar', ['type', 'values', 'alpha', 'color', 'colour', 'key', 'on_click', 'axis'])
+barfactory = ofc_factory('_bar', ['type', 'values', 'alpha', 'color', 'colour', 'key', 'on_click', 'axis', 'text'])
 bar = lambda **kw: barfactory(type='bar',**kw)
 bar_glass = lambda **kw: barfactory(type='bar_glass',**kw)
 
@@ -181,7 +181,7 @@ class open_flash_chart(OFCBase):
             self['menu']['values'] = [menu_value]
             
     def __str__(self):
-        return cjson.encode(self)
+        return anyjson.serialize(self)
 
     def render(self):
-        return cjson.encode(self)
+        return anyjson.serialize(self)

@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import sys, os
 
-version = '0.1.1'
+version = '0.1.2'
 
 setup(name='PyOFC2',
       version=version,
@@ -24,7 +24,7 @@ PyOFC2 is a python library to generate json data that can be consumed by Open Fl
       include_package_data=True,
       zip_safe=False,
       install_requires=[
-        "python-cjson>=1.0.5",
+        "anyjson>=0.1",
       ],
       entry_points="""
       # -*- Entry points: -*-
