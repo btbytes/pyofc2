@@ -44,6 +44,7 @@ class OFCBase(dict):
         'proximity': 'mouse', 'spoke_labels':'spoke-labels',
         'visible_steps': 'visible-steps',
         'javascript_function': 'javascript-function',
+        'on_show':'on-show',
     }
 
     def __setattr__(self, k, w):
@@ -110,14 +111,16 @@ dot = lambda **kw: dotfactory(type='solid-dot', **kw)
 hollowdot = lambda **kw: dotfactory(type='hollow-dot', **kw)
 stardot = lambda **kw: dotfactory(type='star', **kw)
 
-barfactory = ofc_factory('_bar', ['type', 'values', 'alpha', 'color', 'colour', 'key', 'on_click', 'axis', 'text'])
+bar_on_show = ofc_factory('_bar_on_show', ['type', 'cascade', 'delay'])
+
+barfactory = ofc_factory('_bar', ['type', 'values', 'alpha', 'color', 'colour', 'key', 'on_click', 'on_show', 'axis', 'text'])
 bar = lambda **kw: barfactory(type='bar',**kw)
 bar_glass = lambda **kw: barfactory(type='bar_glass',**kw)
 
 barvalue = ofc_factory('values', ['colour', 'value', 'tip', 'top', 'bottom'])
 
 barfilledfactory = ofc_factory('_bar', ['type', 'values', 'alpha', 'color',
-    'colour', 'key', 'outline_colour', 'outline_color'])
+    'colour', 'key', 'outline_colour', 'outline_color', 'on_show'])
 bar_filled = lambda **kw: barfilledfactory(type='bar_filled',**kw)
 
 hbarfactory = ofc_factory('_hbar', ['type', 'values', 'color', 'colour', 'tooltip', 'tip'])
@@ -179,7 +182,7 @@ class open_flash_chart(OFCBase):
             self['menu']['values'].append(menu_value)
         except:
             self['menu']['values'] = [menu_value]
-            
+
     def __str__(self):
         return anyjson.serialize(self)
 
