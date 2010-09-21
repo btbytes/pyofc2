@@ -1,13 +1,16 @@
 from setuptools import setup, find_packages
 import sys, os
+here = os.path.abspath(os.path.dirname(__file__))
+README = open(os.path.join(here, 'README.rst')).read()
+NEWS = open(os.path.join(here, 'NEWS.rst')).read()
 
-version = '0.1.3'
+
+version = '0.1.4'
 
 setup(name='PyOFC2',
       version=version,
-      description="Python library for Open Flash Chart",
-      long_description="""\
-PyOFC2 is a python library to generate json data that can be consumed by Open Flash Chart to produce Flash Charts. A Demo of the Flash charts generated using this library is available at http://btbytes.github.com/pyofc2 """,
+      description="Python library for Open Flash Chart 2",
+      long_description=README + "\n\n" + NEWS,
       classifiers=[
         "Development Status :: 4 - Beta",
         "License :: OSI Approved :: MIT License",
