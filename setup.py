@@ -5,7 +5,7 @@ README = open(os.path.join(here, 'README.rst')).read()
 NEWS = open(os.path.join(here, 'NEWS.rst')).read()
 
 
-version = '0.1.4'
+version = '0.1.5'
 
 setup(name='PyOFC2',
       version=version,
